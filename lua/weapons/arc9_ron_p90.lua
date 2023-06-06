@@ -164,7 +164,7 @@ SWEP.TracerColor			= Color(255, 225, 200) -- Color of tracers. Only works if tra
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-	Pos			= Vector(-6.45, -12.5, 1.2),
+	Pos			= Vector(-6.45, -15, 1.25),
 	Ang			= Angle(0, 0, 0),
 	Midpoint = { -- Where the gun should be at the middle of it's irons
 		Pos			= Vector(0, 15, -4),
@@ -184,7 +184,7 @@ SWEP.CrouchPos				= Vector(-4, -12, -1)
 SWEP.CrouchAng				= Angle(0, 0, -10)
 
 SWEP.CustomizeAng			= Angle(90, 0, 0)
-SWEP.CustomizePos			= Vector(20, 0, 5)
+SWEP.CustomizePos			= Vector(20, 10, 5)
 SWEP.CustomizeSnapshotFOV	= 70
 
 -------------------------- HoldTypes
@@ -210,7 +210,7 @@ SWEP.ShellScale				= 1
 SWEP.ShellPhysBox			= Vector(0.5, 0.5, 2)
 
 SWEP.CamQCA					= 3
-SWEP.CamOffsetAng			= Angle(0, 0, 90)
+SWEP.CamOffsetAng			= Angle(0, 90, 0)
 -------------------------- SOUNDS
 
 
