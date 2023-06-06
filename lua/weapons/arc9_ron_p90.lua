@@ -164,7 +164,7 @@ SWEP.TracerColor			= Color(255, 225, 200) -- Color of tracers. Only works if tra
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-	Pos			= Vector(-4.657, -8, -14),
+	Pos			= Vector(-6.45, -12.5, 1.2),
 	Ang			= Angle(0, 0, 0),
 	Midpoint = { -- Where the gun should be at the middle of it's irons
 		Pos			= Vector(0, 15, -4),
@@ -177,11 +177,11 @@ SWEP.IronSights = {
 SWEP.SprintPos				= Vector(0.5, 0, -15)
 SWEP.SprintAng				= Angle(15.5, 2, -7)
 
-SWEP.ActivePos				= Vector(-0.9, -5, -14.8)
-SWEP.ActiveAng				= Angle(0, 0, -2)
+SWEP.ActivePos				= Vector(-4, -10, 1)
+SWEP.ActiveAng				= Angle(0, 0, 0)
 
 SWEP.CustomizeAng			= Angle(90, 0, 0)
-SWEP.CustomizePos			= Vector(10, 20, -10)
+SWEP.CustomizePos			= Vector(0, 0, 0)
 SWEP.CustomizeSnapshotFOV	= 70
 
 -------------------------- HoldTypes
@@ -233,6 +233,7 @@ SWEP.Animations = {
 		Source				= "ready",
 		EventTable = {
 			{s	= path .. "P90_First_Draw.ogg",			t = 0},
+			{s	= common .. "Cloth-CheckStart.ogg",			t = 0},
 		},
 	},
 	["idle"] = {
@@ -282,10 +283,10 @@ SWEP.Animations = {
 		ShellEjectAt				= 0.03,
 		EventTable = {
 			{s	= {
-				path .. "",
-				path .. "",
-				path .. "",
-				path .. "",
+				path .. "P90-1.ogg",
+				path .. "P90-2.ogg",
+				path .. "P90-3.ogg",
+				path .. "P90-4.ogg",
 				path .. "",
 				path .. ""
 			},										t = 0.03},
