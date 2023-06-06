@@ -174,14 +174,17 @@ SWEP.IronSights = {
 	Magnification	= 1.1,
 }
 
-SWEP.SprintPos				= Vector(0.5, 0, -15)
+SWEP.SprintPos				= Vector(-1, -12, -2)
 SWEP.SprintAng				= Angle(15.5, 2, -7)
 
 SWEP.ActivePos				= Vector(-4, -10, 1)
 SWEP.ActiveAng				= Angle(0, 0, 0)
 
+SWEP.CrouchPos				= Vector(-4, -12, -1)
+SWEP.CrouchAng				= Angle(0, 0, -10)
+
 SWEP.CustomizeAng			= Angle(90, 0, 0)
-SWEP.CustomizePos			= Vector(0, 0, 0)
+SWEP.CustomizePos			= Vector(20, 0, 5)
 SWEP.CustomizeSnapshotFOV	= 70
 
 -------------------------- HoldTypes
@@ -226,7 +229,7 @@ local ci = CHAN_AUTO
 local ratel = {path .. "pistol_rattle_1.ogg", path .. "pistol_rattle_2.ogg", path .. "pistol_rattle_3.ogg"}
 local rottle = {common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}
 
-SWEP.ReloadInSights				= true -- This weapon can aim down sights while reloading.
+SWEP.ReloadInSights				= false -- This weapon can aim down sights while reloading.
 
 SWEP.Animations = {
 	["ready"] = {
