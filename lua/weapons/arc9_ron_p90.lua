@@ -3,7 +3,7 @@ AddCSLuaFile()
 SWEP.Base					= "arc9_base"
 
 SWEP.Spawnable				= true
-SWEP.Category				= "ARC9 - Ready or Not - FN P90 TR"
+SWEP.Category				= "ARC9 - Ready or Not"
 
 SWEP.PrintName				= "FN P90 TR"
 SWEP.TrueName				= "P90"
@@ -46,17 +46,17 @@ SWEP.DefaultBodygroups		= "0000000000000000000000"
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax				= 40 -- Damage done at point blank range
-SWEP.DamageMin				= 30 -- Damage done at maximum range
+SWEP.DamageMax				= 20 -- Damage done at point blank range
+SWEP.DamageMin				= 10 -- Damage done at maximum range
 
 SWEP.DamageRand				= 0 -- Damage varies randomly per shot by this fraction. 0.1				= +- 10% damage per shot.
 
 SWEP.RangeMin				= 15 / ARC9.HUToM -- How far bullets retain their maximum damage for.
 SWEP.RangeMax				= 50 / ARC9.HUToM -- In Hammer units, how far bullets can travel before dealing DamageMin.
 
-SWEP.Penetration			= 5 -- Units of wood that can be penetrated by this gun.
+SWEP.Penetration			= 28 -- Units of wood that can be penetrated by this gun.
 
-SWEP.PhysBulletMuzzleVelocity	= 375 / ARC9.HUToM
+SWEP.PhysBulletMuzzleVelocity	= 715 / ARC9.HUToM
 
 -------------------------- MAGAZINE
 
@@ -75,6 +75,9 @@ SWEP.DropMagazineSounds = {
 }	-- Table of sounds a dropped magazine should play.
 SWEP.DropMagazineAmount				= 0 -- Amount of mags to drop.
 SWEP.DropMagazineTime				= 0
+SWEP.ReloadHideBonesTables = true
+SWEP.DropMagazine = true
+SWEP.ReloadHideBonesFirstPerson = true
 
 -------------------------- FIREMODES
 
@@ -214,16 +217,16 @@ SWEP.CamOffsetAng			= Angle(0, 90, 0)
 -------------------------- SOUNDS
 
 
-local path					= ")^weapons/arc9_ron_p90"
-local common				= ")^weapons/arc9_ron_shared"
-SWEP.FirstShootSound			= path .. "/P90-1.ogg"
-SWEP.ShootSound					= path .. "/P90-2.ogg"
+local path					= ")^weapons/arc9_ron_p90/"
+local common				= ")^weapons/arc9_ron_shared/"
+SWEP.FirstShootSound			= path .. "P90-1.ogg"
+SWEP.ShootSound					= path .. "P90-2.ogg"
 SWEP.DistantShootSound			= path .. ""
-SWEP.ShootSoundSilenced			= path .. "/p90_Fire_1_Suppressed"
+SWEP.ShootSoundSilenced			= path .. "p90_Fire_1_Suppressed"
 SWEP.DistantShootSoundSilenced	= common .. ""
 SWEP.DryFireSound				= path .. "weap_mp5_dryfire_03.ogg"
 
-SWEP.FiremodeSound				= "arc9/firemode.wav"
+SWEP.FiremodeSound				= "weapons/arc9_ron_shared/SwitchToSemi.ogg"
 
 local ci = CHAN_AUTO
 local ratel = {path .. "pistol_rattle_1.ogg", path .. "pistol_rattle_2.ogg", path .. "pistol_rattle_3.ogg"}
@@ -234,11 +237,11 @@ SWEP.ReloadInSights				= false -- This weapon can aim down sights while reloadin
 SWEP.Animations = {
 	["ready"] = {
 		Source				= "ready",
-		Time				= 4.1,
+		Time				= 3.9,
 		EventTable = {
-			{s	= path .. "/p90_first_draw.ogg",			t = 0},
-			{s	= common .. "/Cloth-ReloadStart.ogg",			t = 0},
-			{s	= common .. "/Cloth-DryReloadEndGrab.ogg",			t = 20},
+			{s	= path .. "p90_first_draw.ogg",			t = 0},
+			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
+			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 20},
 		},
 	},
 	["idle"] = {
@@ -252,7 +255,7 @@ SWEP.Animations = {
 	["draw"] = {
 		Source				= "draw",
 		EventTable = {
-			{s	= common .. "/Universal_Long_Draw_02.ogg",			t = 0.35},
+			{s	= common .. "Universal_Long_Draw_02.ogg",			t = 0.35},
 			{s	= common .. "shoulder.ogg",			t = 0.15},
 			{s	= ratel,							t = 0.2},
 		},
@@ -271,7 +274,7 @@ SWEP.Animations = {
 		Time				= 20 / 30,
 		EventTable = {
 			{s	= ratel,							t = 0},
-			{s	= common .. "/Universal_Long_Holster_02.ogg",			t = 0},
+			{s	= common .. "Universal_Long_Holster_02.ogg",			t = 0},
 		},
 	},
 	["holster_empty"] = {
@@ -502,13 +505,13 @@ SWEP.Animations = {
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 0},
 			{s = rottle,									t = 0},
-			{s = path .. "/P90_Reload_Start.ogg",		t = 0.075},
+			{s = path .. "P90_Reload_Start.ogg",		t = 0.075},
 			{s = rattel,									t = 0.3},
-			{s = path .. "/P90_Reload_MagOut.ogg",				t = 0.3, c = ci},
+			{s = path .. "P90_Reload_MagOut.ogg",				t = 0.3, c = ci},
 			{s = rattel,									t = 0.35},
-			{s = path .. "/P90_Reload_MagIn.ogg",					t = 1.6, c = ci},
+			{s = path .. "P90_Reload_MagIn.ogg",					t = 1.6, c = ci},
 			{s = rottle,									t = 0.5},
-			{s = common .. "/magpouch_replace_small.ogg",	t = 1.25},
+			{s = common .. "magpouch_replace_small.ogg",	t = 1.25},
 		},
 	},
 	["reload_empty"] = {
@@ -556,14 +559,14 @@ SWEP.Animations = {
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 1.8},
 			{s = rattel,								t = 0},
-			{s = path .. "/P90_Reload_Empty_Start.ogg",			t = 0, c = ci},
-			{s = path .. "/P90_Reload_Empty_Mag_Release.ogg",	t = 0.35},
-			{s = path .. "/P90_Reload_Empty_Mag_Out.ogg",				t = 0.4, c = ci},
-			{s = path .. "/P90_Reload_Empty_Mag_In.ogg",				t = 1.6, c = ci},
-			{s = common .. "/weap_smg_mag_drop_04.ogg",		t = 1.5},
+			{s = path .. "P90_Reload_Empty_Start.ogg",			t = 0, c = ci},
+			{s = path .. "P90_Reload_Empty_Mag_Release.ogg",	t = 0.35},
+			{s = path .. "P90_Reload_Empty_Mag_Out.ogg",				t = 0.4, c = ci},
+			{s = path .. "P90_Reload_Empty_Mag_In.ogg",				t = 1.6, c = ci},
+			{s = common .. "weap_smg_mag_drop_04.ogg",		t = 1.5},
 			{s = rattel,								t = 1.2},
 			{s = path .. "sliderel_deact.ogg",			t = 1.62, c = ci},
-			{s = path .. "/P90_Reload_Empty_Bolt.ogg",					t = 2.2, c = ci},
+			{s = path .. "P90_Reload_Empty_Bolt.ogg",					t = 2.2, c = ci},
 			{s = rottle,								t = 1.9},
 		},
 	},
@@ -608,3 +611,17 @@ SWEP.Attachments = {
 		Icon_Offset						= Vector(0, 0, 4)
 	},
 }
+
+SWEP.Attachments = {
+	{
+		PrintName						= "VMLight",
+		DefaultName						= "VM Light",
+		DefaultCompactName				= "VM",
+		Category						= "ron_vmlight",
+		Bone							= "laser_socket",
+		Pos								= Vector(0, 0, 0),
+		Ang								= Angle(0, 0, 0),
+		Icon_Offset						= Vector(0, 0, 4)
+	},
+}
+
