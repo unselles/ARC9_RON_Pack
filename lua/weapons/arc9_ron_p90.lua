@@ -105,7 +105,7 @@ SWEP.PostBashTime				= 0.5
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil				= 1
+SWEP.Recoil				= 0.2 --change this later if you want, 1 is totally uncontrollable
 
 -- Static increasing recoil
 SWEP.RecoilUp				= 1
@@ -113,7 +113,7 @@ SWEP.RecoilSide				= 1
 
 -- Unpredictable circle recoil
 SWEP.RecoilRandomUp			= 0.1
-SWEP.RecoilRandomSide		= 0.4
+SWEP.RecoilRandomSide		= 0.3
 
 SWEP.RecoilDissipationRate	= 15 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime		= 0.1 -- How long the gun must go before the recoil pattern starts to reset.
@@ -217,16 +217,51 @@ SWEP.CamOffsetAng			= Angle(0, 90, 0)
 -------------------------- SOUNDS
 
 
-local path					= ")^weapons/arc9_ron_p90/"
-local common				= ")^weapons/arc9_ron_shared/"
-SWEP.FirstShootSound			= path .. "P90-1.ogg"
-SWEP.ShootSound					= path .. "P90-2.ogg"
-SWEP.DistantShootSound			= path .. ""
-SWEP.ShootSoundSilenced			= path .. "p90_Fire_1_Suppressed"
-SWEP.DistantShootSoundSilenced	= common .. ""
+local path					= ")^weapons/arc9_ron_p90"
+local common				= ")^weapons/arc9_ron_shared"
+--SWEP.FirstShootSound			= path .. "/P90-1.ogg"
+--SWEP.ShootSound					= path .. "/P90-2.ogg"
+--SWEP.ShootSoundSilenced			= path .. "/p90_Fire_1_Suppressed"
 SWEP.DryFireSound				= path .. "weap_mp5_dryfire_03.ogg"
+SWEP.DistantShootSoundSilenced	= nil
 
 SWEP.FiremodeSound				= "weapons/arc9_ron_shared/SwitchToSemi.ogg"
+
+SWEP.ShootSound = {
+    path .. "/P90-1.ogg",
+    path .. "/P90-2.ogg",
+    path .. "/P90-3.ogg",
+    path .. "/P90-4.ogg"
+}
+SWEP.ShootSoundSilenced = {
+    path .. "/p90_Fire_1_Suppressed.ogg",
+    path .. "/p90_Fire_2_Suppressed.ogg",
+    path .. "/p90_Fire_3_Suppressed.ogg",
+    path .. "/p90_Fire_4_Suppressed.ogg"
+}
+
+SWEP.DryFireSingleAction = false
+
+SWEP.EnterSightsSound = ratel
+SWEP.ExitSightsSound = ratel
+
+SWEP.DistantShootSound = {
+    path .. "/P90_Reflection_Ext_Base_01.ogg",
+    path .. "/P90_Reflection_Ext_Base_02.ogg"
+}
+SWEP.DistantShootSoundIndoor = {
+    path .. "/P90_Reflection_int_Base_01.ogg",
+    path .. "/P90_Reflection_int_Base_02.ogg"
+}
+
+SWEP.DistantShootSoundSilenced = {
+    common .. "/P90_Suppressed_Reflection_EXT_Base_01.ogg",
+    common .. "/P90_Suppressed_Reflection_EXT_Base_02.ogg"
+}
+SWEP.DistantShootSoundSilencedIndoor = {
+    common .. "/P90_Suppressed_Reflection_Int_Base_01.ogg",
+    common .. "/P90_Suppressed_Reflection_Int_Base_02.ogg"
+}
 
 local ci = CHAN_AUTO
 local ratel = {path .. "pistol_rattle_1.ogg", path .. "pistol_rattle_2.ogg", path .. "pistol_rattle_3.ogg"}
