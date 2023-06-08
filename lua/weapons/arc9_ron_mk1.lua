@@ -248,6 +248,7 @@ SWEP.Animations = {
 	},
 	["draw"] = {
 		Source				= "draw",
+		Time				= 0.01,
 		EventTable = {
 			{s	= common .. "Universal_Long_Draw_02.ogg",			t = 0.35},
 			{s	= common .. "shoulder.ogg",			t = 0.15},

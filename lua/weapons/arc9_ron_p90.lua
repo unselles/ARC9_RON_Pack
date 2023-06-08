@@ -75,9 +75,6 @@ SWEP.DropMagazineSounds = {
 }	-- Table of sounds a dropped magazine should play.
 SWEP.DropMagazineAmount				= 0 -- Amount of mags to drop.
 SWEP.DropMagazineTime				= 0
-SWEP.ReloadHideBonesTables = true
-SWEP.DropMagazine = true
-SWEP.ReloadHideBonesFirstPerson = true
 
 -------------------------- FIREMODES
 
@@ -105,7 +102,7 @@ SWEP.PostBashTime				= 0.5
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil				= 0.2 --change this later if you want, 1 is totally uncontrollable
+SWEP.Recoil				= 1
 
 -- Static increasing recoil
 SWEP.RecoilUp				= 1
@@ -113,7 +110,7 @@ SWEP.RecoilSide				= 1
 
 -- Unpredictable circle recoil
 SWEP.RecoilRandomUp			= 0.1
-SWEP.RecoilRandomSide		= 0.3
+SWEP.RecoilRandomSide		= 0.4
 
 SWEP.RecoilDissipationRate	= 15 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime		= 0.1 -- How long the gun must go before the recoil pattern starts to reset.
@@ -217,27 +214,26 @@ SWEP.CamOffsetAng			= Angle(0, 90, 0)
 -------------------------- SOUNDS
 
 
-local path					= ")^weapons/arc9_ron_p90"
-local common				= ")^weapons/arc9_ron_shared"
---SWEP.FirstShootSound			= path .. "/P90-1.ogg"
---SWEP.ShootSound					= path .. "/P90-2.ogg"
---SWEP.ShootSoundSilenced			= path .. "/p90_Fire_1_Suppressed"
+local path					= ")^weapons/arc9_ron_p90/"
+local common				= ")^weapons/arc9_ron_shared/"
+SWEP.FirstShootSound			= path .. "P90-1.ogg"
+SWEP.ShootSound					= path .. "P90-2.ogg"
+SWEP.DistantShootSound			= path .. ""
+SWEP.ShootSoundSilenced			= path .. "p90_Fire_1_Suppressed"
+SWEP.DistantShootSoundSilenced	= common .. ""
 SWEP.DryFireSound				= path .. "weap_mp5_dryfire_03.ogg"
-SWEP.DistantShootSoundSilenced	= nil
-
-SWEP.FiremodeSound				= "weapons/arc9_ron_shared/SwitchToSemi.ogg"
 
 SWEP.ShootSound = {
-    path .. "/P90-1.ogg",
-    path .. "/P90-2.ogg",
-    path .. "/P90-3.ogg",
-    path .. "/P90-4.ogg"
+    path .. "P90-1.ogg",
+    path .. "P90-2.ogg",
+    path .. "P90-3.ogg",
+    path .. "P90-4.ogg"
 }
 SWEP.ShootSoundSilenced = {
-    path .. "/p90_Fire_1_Suppressed.ogg",
-    path .. "/p90_Fire_2_Suppressed.ogg",
-    path .. "/p90_Fire_3_Suppressed.ogg",
-    path .. "/p90_Fire_4_Suppressed.ogg"
+    path .. "p90_Fire_1_Suppressed.ogg",
+    path .. "p90_Fire_2_Suppressed.ogg",
+    path .. "p90_Fire_3_Suppressed.ogg",
+    path .. "p90_Fire_4_Suppressed.ogg"
 }
 
 SWEP.DryFireSingleAction = false
@@ -246,22 +242,24 @@ SWEP.EnterSightsSound = ratel
 SWEP.ExitSightsSound = ratel
 
 SWEP.DistantShootSound = {
-    path .. "/P90_Reflection_Ext_Base_01.ogg",
-    path .. "/P90_Reflection_Ext_Base_02.ogg"
+    path .. "P90_Reflection_Ext_Base_01.ogg",
+    path .. "P90_Reflection_Ext_Base_02.ogg"
 }
 SWEP.DistantShootSoundIndoor = {
-    path .. "/P90_Reflection_int_Base_01.ogg",
-    path .. "/P90_Reflection_int_Base_02.ogg"
+    path .. "P90_Reflection_int_Base_01.ogg",
+    path .. "P90_Reflection_int_Base_02.ogg"
 }
 
 SWEP.DistantShootSoundSilenced = {
-    common .. "/P90_Suppressed_Reflection_EXT_Base_01.ogg",
-    common .. "/P90_Suppressed_Reflection_EXT_Base_02.ogg"
+    common .. "P90_Suppressed_Reflection_EXT_Base_01.ogg",
+    common .. "P90_Suppressed_Reflection_EXT_Base_02.ogg"
 }
 SWEP.DistantShootSoundSilencedIndoor = {
-    common .. "/P90_Suppressed_Reflection_Int_Base_01.ogg",
-    common .. "/P90_Suppressed_Reflection_Int_Base_02.ogg"
+    common .. "P90_Suppressed_Reflection_Int_Base_01.ogg",
+    common .. "P90_Suppressed_Reflection_Int_Base_02.ogg"
 }
+
+SWEP.FiremodeSound				= "weapons/arc9_ron_shared/SwitchToSemi.ogg"
 
 local ci = CHAN_AUTO
 local ratel = {path .. "pistol_rattle_1.ogg", path .. "pistol_rattle_2.ogg", path .. "pistol_rattle_3.ogg"}
@@ -499,7 +497,7 @@ SWEP.Animations = {
 		},
 	},
 
-	-- 17 Round Reloads --
+	-- Reloads --
 
 	["reload"] = {
 		Source				= "reload",
@@ -605,34 +603,21 @@ SWEP.Animations = {
 			{s = rottle,								t = 1.9},
 		},
 	},
+	
+	-- Inspect --
+	
+	["inspect_enter"] = {
+        Source = "inspect_enter",
+		Time				= 2,
+		EventTable = {
+			{s	= path .. "p90_first_draw.ogg",			t = 0},
+			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
+			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 0},
+		},
+	},
 }
-	-- 10 Round Reloads --
-
 
 -------------------------- ATTACHMENTS
-
-SWEP.AttachmentElements = {
-	["ud_glock_skin_tan"] = {
-		Skin = 1,
-	},
-	["ud_glock_skin_olive"] = {
-		Skin = 2,
-	}
-}
-
-SWEP.Hook_TranslateAnimation				= function(swep, anim)
-	local elements				= swep:GetElements()
-
-	if elements["ud_glock_mag_10"] then
-		return anim .. "_10"
-	elseif elements["ud_glock_mag_33"] then
-		return anim .. "_33"
-	elseif elements["ud_glock_mag_100"] then
-		return anim .. "_100"
-	elseif elements["ud_glock_frame_flared"] then
-		return anim .. "_flared"
-	end
-end
 
 SWEP.Attachments = {
 	{
