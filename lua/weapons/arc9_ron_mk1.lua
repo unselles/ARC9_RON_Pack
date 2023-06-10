@@ -161,11 +161,11 @@ SWEP.TracerColor			= Color(255, 225, 200) -- Color of tracers. Only works if tra
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-	Pos			= Vector(-4.6, -8, -13.8),
+	Pos			= Vector(-6.45, -10, 1.5),
 	Ang			= Angle(0, 0, 0),
 	Midpoint = { -- Where the gun should be at the middle of it's irons
-		Pos			= Vector(0, 15, -4),
-		Ang			= Angle(0, 0, -45),
+		Pos			= Vector(0, 0, 0),
+		Ang			= Angle(0, 0, 0),
 	},
 	ViewModelFOV = 50,
 	Magnification	= 1.1,
@@ -248,7 +248,7 @@ SWEP.Animations = {
 	},
 	["draw"] = {
 		Source				= "draw",
-		Time				= 0.01,
+		Time				= 2,
 		EventTable = {
 			{s	= common .. "Universal_Long_Draw_02.ogg",			t = 0.35},
 			{s	= common .. "shoulder.ogg",			t = 0.15},
@@ -459,12 +459,12 @@ SWEP.Animations = {
 		},
 	},
 
-	-- 17 Round Reloads --
+	-- Reloads --
 
 	["reload"] = {
 		Source				= "reload",
 		TPAnim				= ACT_HL2MP_GESTURE_RELOAD_AR2,
-		Time				= 30 / 10,
+		Time				= 3,
 		MinProgress				= 1.1,
 		LastClip1OutTime				= 0.9,
 		IKTimeLine = {
@@ -512,7 +512,7 @@ SWEP.Animations = {
 	["reload_empty"] = {
 		Source				= "reload_empty",
 		TPAnim				= ACT_HL2MP_GESTURE_RELOAD_AR2,
-		Time				= 30 / 10,
+		Time				= 2.3,
 		MinProgress				= 1.5,
 		LastClip1OutTime				= 0.7,
 		IKTimeLine = {
@@ -565,8 +565,20 @@ SWEP.Animations = {
 			{s = rottle,								t = 1.9},
 		},
 	},
+
+	-- Inspect --
+	
+	["inspect_enter"] = {
+        Source = "inspect_enter",
+		Time				= 2,
+		EventTable = {
+			{s	= path .. "p90_first_draw.ogg",			t = 0},
+			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
+			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 0},
+		},
+	},
 }
-	-- 10 Round Reloads --
+
 
 
 -------------------------- ATTACHMENTS
