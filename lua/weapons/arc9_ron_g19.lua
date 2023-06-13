@@ -177,7 +177,7 @@ SWEP.IronSights = {
 SWEP.SprintPos				= Vector(-1, -12, -2)
 SWEP.SprintAng				= Angle(15.5, 2, -7)
 
-SWEP.ActivePos				= Vector(-4.5, -13, 2)
+SWEP.ActivePos				= Vector(-4.5, -10, 2)
 SWEP.ActiveAng				= Angle(0, -2, 0)
 
 SWEP.CrouchPos				= Vector(-4, -12, -1)
@@ -214,20 +214,20 @@ SWEP.CamOffsetAng			= Angle(0, 90, 0)
 -------------------------- SOUNDS
 
 
-local path					= ")^weapons/arc9_ron_p90/"
+local path					= ")^weapons/arc9_ron_g19/"
 local common				= ")^weapons/arc9_ron_shared/"
-SWEP.FirstShootSound			= path .. "P90-1.ogg"
-SWEP.ShootSound					= path .. "P90-2.ogg"
+SWEP.FirstShootSound			= path .. "Glock-1.ogg"
+SWEP.ShootSound					= path .. "Glock-2.ogg"
 SWEP.DistantShootSound			= path .. ""
-SWEP.ShootSoundSilenced			= path .. "p90_Fire_1_Suppressed"
+SWEP.ShootSoundSilenced			= path .. "Glock-1-Suppressed.ogg"
 SWEP.DistantShootSoundSilenced	= common .. ""
-SWEP.DryFireSound				= path .. "weap_mp5_dryfire_03.ogg"
+SWEP.DryFireSound				= path .. "weap_g19_dry_fire_01.ogg"
 
 SWEP.ShootSound = {
-    path .. "P90-1.ogg",
-    path .. "P90-2.ogg",
-    path .. "P90-3.ogg",
-    path .. "P90-4.ogg"
+    path .. "Glock-1.ogg",
+    path .. "Glock-2.ogg",
+    path .. "Glock-3.ogg",
+    path .. "Glock-4.ogg"
 }
 SWEP.ShootSoundSilenced = {
     path .. "p90_Fire_1_Suppressed.ogg",
@@ -246,8 +246,8 @@ SWEP.DistantShootSound = {
     path .. "P90_Reflection_Ext_Base_02.ogg"
 }
 SWEP.DistantShootSoundIndoor = {
-    path .. "P90_Reflection_int_Base_01.ogg",
-    path .. "P90_Reflection_int_Base_02.ogg"
+    path .. "Glock18_Reflection_Int_Base_01.ogg",
+    path .. "Glock18_Reflection_Int_Base_02.ogg"
 }
 
 SWEP.DistantShootSoundSilenced = {
@@ -262,8 +262,8 @@ SWEP.DistantShootSoundSilencedIndoor = {
 SWEP.FiremodeSound				= "weapons/arc9_ron_shared/SwitchToSemi.ogg"
 
 local ci = CHAN_AUTO
-local ratel = {path .. "pistol_rattle_1.ogg", path .. "pistol_rattle_2.ogg", path .. "pistol_rattle_3.ogg"}
-local rottle = {common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}
+local ratel = {path .. "char_foley_jingle_05.ogg", path .. "char_foley_jingle_02.ogg", path .. "char_foley_jingle_03.ogg"}
+local rottle = {common .. "Cloth-CheckDone.ogg", common .. "Cloth-CheckInspect.ogg", common .. "Cloth-CheckMagOut.ogg", common .. "Cloth-CheckB4MagIn.ogg", common .. "char_foley_jingle_06.ogg"}
 
 SWEP.ReloadInSights				= false -- This weapon can aim down sights while reloading.
 
@@ -493,7 +493,7 @@ SWEP.Animations = {
 	["reload"] = {
 		Source				= "reload",
 		TPAnim				= ACT_HL2MP_GESTURE_RELOAD_AR2,
-		Time				= 30 / 10,
+		Time				=  2.45,
 		MinProgress				= 1.1,
 		LastClip1OutTime				= 0.9,
 		IKTimeLine = {
@@ -528,21 +528,16 @@ SWEP.Animations = {
 			FOV_End = 1.7,
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 0},
-			{s = rottle,									t = 0},
-			{s = path .. "P90_Reload_Start.ogg",		t = 0.075},
-			{s = rattel,									t = 0.3},
-			{s = path .. "P90_Reload_MagOut.ogg",				t = 0.3, c = ci},
-			{s = rattel,									t = 0.35},
-			{s = path .. "P90_Reload_MagIn.ogg",					t = 1.6, c = ci},
-			{s = rottle,									t = 0.5},
-			{s = common .. "magpouch_replace_small.ogg",	t = 1.25},
+			{s	= ratel,							t = 0},
+			{s = path .. "weap_g19_tac_reload_01.ogg",		t = 0},
+			{s	= ratel,							t = 1},
 		},
 	},
 	["reload_empty"] = {
 		Source				= "reload_empty",
 		TPAnim				= ACT_HL2MP_GESTURE_RELOAD_AR2,
-		Time				= 30 / 10,
-		MinProgress				= 1.5,
+		Time				= 88 / 30,
+		MinProgress				= 1,
 		LastClip1OutTime				= 0.7,
 		IKTimeLine = {
 			{
@@ -583,15 +578,7 @@ SWEP.Animations = {
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 1.8},
 			{s = rattel,								t = 0},
-			{s = path .. "P90_Reload_Empty_Start.ogg",			t = 0, c = ci},
-			{s = path .. "P90_Reload_Empty_Mag_Release.ogg",	t = 0.35},
-			{s = path .. "P90_Reload_Empty_Mag_Out.ogg",				t = 0.4, c = ci},
-			{s = path .. "P90_Reload_Empty_Mag_In.ogg",				t = 1.6, c = ci},
-			{s = common .. "weap_smg_mag_drop_04.ogg",		t = 1.5},
-			{s = rattel,								t = 1.2},
-			{s = path .. "sliderel_deact.ogg",			t = 1.62, c = ci},
-			{s = path .. "P90_Reload_Empty_Bolt.ogg",					t = 2.2, c = ci},
-			{s = rottle,								t = 1.9},
+			{s = path .. "weap_g19_reload_empty_01.ogg",			t = 0, c = ci},
 		},
 	},
 	
@@ -601,7 +588,8 @@ SWEP.Animations = {
         Source = "inspect_enter",
 		Time				= 2,
 		EventTable = {
-			{s	= path .. "p90_first_draw.ogg",			t = 0},
+			{s	= ratel,							t = 0},
+			{s	= path .. "weap_g19_mag_check_01.ogg",			t = 0},
 			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
 			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 0},
 		},

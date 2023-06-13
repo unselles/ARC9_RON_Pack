@@ -174,7 +174,7 @@ SWEP.IronSights = {
 SWEP.SprintPos				= Vector(-1, -12, -2)
 SWEP.SprintAng				= Angle(15.5, 2, -7)
 
-SWEP.ActivePos				= Vector(-4, -10, 1)
+SWEP.ActivePos				= Vector(-4, -9, 1)
 SWEP.ActiveAng				= Angle(0, 0, 0)
 
 SWEP.CrouchPos				= Vector(-4, -12, -1)
@@ -211,14 +211,50 @@ SWEP.CamOffsetAng			= Angle(0, 90, 0)
 -------------------------- SOUNDS
 
 
-local path					= ")^weapons/arc9_ron_p90/"
+local path					= ")^weapons/acr9_ron_mk1/"
 local common				= ")^weapons/arc9_ron_shared/"
-SWEP.FirstShootSound			= path .. "P90-1.ogg"
-SWEP.ShootSound					= path .. "P90-2.ogg"
+SWEP.FirstShootSound			= path .. "MK1-1.ogg"
+SWEP.ShootSound					= path .. "MK1-2.ogg"
 SWEP.DistantShootSound			= path .. ""
-SWEP.ShootSoundSilenced			= path .. "p90_Fire_1_Suppressed"
+SWEP.ShootSoundSilenced			= path .. "MK1-1_Suppressed.ogg"
 SWEP.DistantShootSoundSilenced	= common .. ""
-SWEP.DryFireSound				= path .. "weap_mp5_dryfire_03.ogg"
+SWEP.DryFireSound				= common .. "weap_mp5_dryfire_03.ogg"
+
+SWEP.ShootSound = {
+    path .. "MK1-1.ogg",
+    path .. "MK1-2.ogg",
+    path .. "MK1-3.ogg",
+    path .. "MK1-4.ogg"
+}
+SWEP.ShootSoundSilenced = {
+    path .. "p90_Fire_1_Suppressed.ogg",
+    path .. "p90_Fire_2_Suppressed.ogg",
+    path .. "p90_Fire_3_Suppressed.ogg",
+    path .. "p90_Fire_4_Suppressed.ogg"
+}
+
+SWEP.DryFireSingleAction = false
+
+SWEP.EnterSightsSound = ratel
+SWEP.ExitSightsSound = ratel
+
+SWEP.DistantShootSound = {
+    path .. "MK1_Ext_Reflection_Base_02.ogg",
+    path .. "MK1_Ext_Reflection_Base_02.ogg"
+}
+SWEP.DistantShootSoundIndoor = {
+    path .. "MK1_Reflection_int_Base_02.ogg",
+    path .. "MK1_Reflection_int_Base_01.ogg"
+}
+
+SWEP.DistantShootSoundSilenced = {
+    common .. "P90_Suppressed_Reflection_EXT_Base_01.ogg",
+    common .. "P90_Suppressed_Reflection_EXT_Base_02.ogg"
+}
+SWEP.DistantShootSoundSilencedIndoor = {
+    common .. "P90_Suppressed_Reflection_Int_Base_01.ogg",
+    common .. "P90_Suppressed_Reflection_Int_Base_02.ogg"
+}
 
 SWEP.FiremodeSound				= "weapons/arc9_ron_shared/SwitchToSemi.ogg"
 
@@ -248,7 +284,7 @@ SWEP.Animations = {
 	},
 	["draw"] = {
 		Source				= "draw",
-		Time				= 2,
+		Time				= 30 / 30,
 		EventTable = {
 			{s	= common .. "Universal_Long_Draw_02.ogg",			t = 0.35},
 			{s	= common .. "shoulder.ogg",			t = 0.15},
@@ -500,11 +536,11 @@ SWEP.Animations = {
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 0},
 			{s = rottle,									t = 0},
-			{s = path .. "P90_Reload_Start.ogg",		t = 0.075},
+			{s = path .. "MK1_Reload_Normal_Start.ogg",		t = 0.075},
 			{s = rattel,									t = 0.3},
-			{s = path .. "P90_Reload_MagOut.ogg",				t = 0.3, c = ci},
+			{s = path .. "MK1_Reload_Normal_MagOut.ogg",				t = 0.5, c = ci},
 			{s = rattel,									t = 0.35},
-			{s = path .. "P90_Reload_MagIn.ogg",					t = 1.6, c = ci},
+			{s = path .. "MK1_Reload_Normal_MagIn.ogg",					t = 1.05, c = ci},
 			{s = rottle,									t = 0.5},
 			{s = common .. "magpouch_replace_small.ogg",	t = 1.25},
 		},
@@ -554,14 +590,13 @@ SWEP.Animations = {
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 1.8},
 			{s = rattel,								t = 0},
-			{s = path .. "P90_Reload_Empty_Start.ogg",			t = 0, c = ci},
-			{s = path .. "P90_Reload_Empty_Mag_Release.ogg",	t = 0.35},
-			{s = path .. "P90_Reload_Empty_Mag_Out.ogg",				t = 0.4, c = ci},
-			{s = path .. "P90_Reload_Empty_Mag_In.ogg",				t = 1.6, c = ci},
-			{s = common .. "weap_smg_mag_drop_04.ogg",		t = 1.5},
+			{s = path .. "MK1_Reload_Empty_Start.ogg",			t = 0, c = ci},
+			{s = path .. "MK1_Reload_Empty_MagOut.ogg",				t = 0.12, c = ci},
+			{s = common .. "weap_rifle_mag_drop_03.ogg",		t = 0.15},
+			{s = path .. "MK1_Reload_Empty_MagIn.ogg",				t = 0.85, c = ci},
+			{s = path .. "MK1_Reload_Empty_Bolt.ogg",					t = 1.35, c = ci},
 			{s = rattel,								t = 1.2},
 			{s = path .. "sliderel_deact.ogg",			t = 1.62, c = ci},
-			{s = path .. "P90_Reload_Empty_Bolt.ogg",					t = 2.2, c = ci},
 			{s = rottle,								t = 1.9},
 		},
 	},
