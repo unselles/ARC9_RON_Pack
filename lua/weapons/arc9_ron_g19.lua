@@ -274,7 +274,7 @@ SWEP.Animations = {
 	},
 	["idle_empty"] = {
 		Source				= "idle_empty",
-		Time				= 1
+		Time				= 4
 	},
 	["draw"] = {
 		Source				= "draw",
@@ -311,7 +311,7 @@ SWEP.Animations = {
 	},
 	["fire"] = {
 		Source				= "fire",
-		Time				= 1.5,
+		Time				= 0.8,
 		ShellEjectAt				= 0.03,
 		EventTable = {
 			{s	= {
