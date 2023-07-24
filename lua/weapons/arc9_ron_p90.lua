@@ -246,8 +246,8 @@ SWEP.DistantShootSound = {
     path .. "P90_Reflection_Ext_Base_02.ogg"
 }
 SWEP.DistantShootSoundIndoor = {
-    path .. "P90_Reflection_int_Base_01.ogg",
-    path .. "P90_Reflection_int_Base_02.ogg"
+    path .. "P90-1.ogg",
+    path .. "P90-2.ogg"
 }
 
 SWEP.DistantShootSoundSilenced = {
