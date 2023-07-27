@@ -32,7 +32,7 @@ SWEP.ViewModel				= "models/weapons/arc9/python.mdl"
 SWEP.WorldModel				= "models/weapons/arc9/python.mdl"
 SWEP.ViewModelFOVBase		= 70
 
-SWEP.Slot					= 2
+SWEP.Slot					= 1
 SWEP.Crosshair				= true
 
 SWEP.MirrorVMWM				= true
@@ -61,7 +61,7 @@ SWEP.PhysBulletMuzzleVelocity	= 715 / ARC9.HUToM
 -------------------------- MAGAZINE
 
 SWEP.Ammo						= "pistol" -- What ammo type this gun uses.
-SWEP.ChamberSize				= 1 -- The amount of rounds this gun can chamber.
+SWEP.ChamberSize				= 0 -- The amount of rounds this gun can chamber.
 SWEP.ClipSize					= 6 -- Self-explanatory.
 SWEP.SupplyLimit				= 3 -- Amount of magazines of ammo this gun can take from an ARC9 supply crate.
 SWEP.SecondarySupplyLimit		= 0 -- Amount of reserve UBGL magazines you can take.
@@ -78,7 +78,7 @@ SWEP.DropMagazineTime				= 0
 
 -------------------------- FIREMODES
 
-SWEP.RPM				= 950
+SWEP.RPM				= 75
 SWEP.Firemodes = {
 	{
 		Mode				= -1
@@ -102,22 +102,22 @@ SWEP.PostBashTime				= 0.5
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil				= 1.5
+SWEP.Recoil				= 4
 
 -- Static increasing recoil
 SWEP.RecoilUp				= 1
 SWEP.RecoilSide				= 1
 
 -- Unpredictable circle recoil
-SWEP.RecoilRandomUp			= 0.1
-SWEP.RecoilRandomSide		= 0.4
+SWEP.RecoilRandomUp			= 0.2
+SWEP.RecoilRandomSide		= 0.6
 
 SWEP.RecoilDissipationRate	= 15 -- How much recoil dissipates per second.
 SWEP.RecoilResetTime		= 0.1 -- How long the gun must go before the recoil pattern starts to reset.
 
 SWEP.RecoilAutoControl		= 0
 
-SWEP.RecoilKick				= 0.1
+SWEP.RecoilKick				= 1.2
 SWEP.RecoilPatternDrift		= 5000
 
 SWEP.RecoilMultHipFire				= 1.25
@@ -164,7 +164,7 @@ SWEP.TracerColor			= Color(255, 225, 200) -- Color of tracers. Only works if tra
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-	Pos			= Vector(-6.42, -12, 2.43),
+	Pos			= Vector(-6.42, -12, 1.85),
 	Ang			= Angle(0, 0, 0),
 	Midpoint = { -- Where the gun should be at the middle of it's irons
 		Pos			= Vector(0, 15, -4),
@@ -177,7 +177,7 @@ SWEP.IronSights = {
 SWEP.SprintPos				= Vector(-1, -12, -2)
 SWEP.SprintAng				= Angle(15.5, 2, -7)
 
-SWEP.ActivePos				= Vector(-4, -10, 1)
+SWEP.ActivePos				= Vector(-4, -11, 1)
 SWEP.ActiveAng				= Angle(.5, 0, 0)
 
 SWEP.CrouchPos				= Vector(-4, -12, -1)
@@ -206,11 +206,11 @@ SWEP.MuzzleParticle			= "muzzleflash_1" -- Used for some muzzle effects.
 
 SWEP.ShellModel				= "models/weapons/arccw/uc_shells/9x19.mdl"
 SWEP.ShellCorrectAng		= Angle(0, 180, 0)
-SWEP.ShellScale				= 1
+SWEP.ShellScale				= 0
 SWEP.ShellPhysBox			= Vector(0.5, 0.5, 2)
 
 SWEP.CamQCA					= 3
-SWEP.CamOffsetAng			= Angle(-90, 90, 0)
+SWEP.CamOffsetAng			= Angle(0, 90, 0)
 -------------------------- SOUNDS
 
 
