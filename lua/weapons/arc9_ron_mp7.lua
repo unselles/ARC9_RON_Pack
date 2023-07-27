@@ -123,6 +123,7 @@ SWEP.RecoilPatternDrift		= 5000
 SWEP.RecoilMultHipFire				= 1.25
 SWEP.RecoilAutoControlMultHipFire	= 0.5
 
+
 -------------------------- SPREAD
 
 SWEP.Spread				= math.rad(1)
@@ -214,26 +215,26 @@ SWEP.CamOffsetAng			= Angle(0, 90, 0)
 -------------------------- SOUNDS
 
 
-local path					= ")^weapons/arc9_ron_p90/"
+local path					= ")^weapons/arc9_ron_mp7/"
 local common				= ")^weapons/arc9_ron_shared/"
-SWEP.FirstShootSound			= path .. "P90-1.ogg"
-SWEP.ShootSound					= path .. "P90-2.ogg"
+SWEP.FirstShootSound			= path .. "MP7_Fire_1.ogg"
+SWEP.ShootSound					= path .. "MP7_Fire_2.ogg"
 SWEP.DistantShootSound			= path .. ""
-SWEP.ShootSoundSilenced			= path .. "p90_Fire_1_Suppressed"
+SWEP.ShootSoundSilenced			= path .. "MP7_Fire_1_Suppressed.ogg"
 SWEP.DistantShootSoundSilenced	= common .. ""
 SWEP.DryFireSound				= path .. "weap_mp5_dryfire_03.ogg"
 
 SWEP.ShootSound = {
-    path .. "P90-1.ogg",
-    path .. "P90-2.ogg",
-    path .. "P90-3.ogg",
-    path .. "P90-4.ogg"
+    path .. "MP7_Fire_1.ogg",
+    path .. "MP7_Fire_2.ogg",
+    path .. "MP7_Fire_3.ogg",
+    path .. "MP7_Fire_4.ogg"
 }
 SWEP.ShootSoundSilenced = {
-    path .. "p90_Fire_1_Suppressed.ogg",
-    path .. "p90_Fire_2_Suppressed.ogg",
-    path .. "p90_Fire_3_Suppressed.ogg",
-    path .. "p90_Fire_4_Suppressed.ogg"
+    path .. "MP7_Fire_1_Suppressed.ogg",
+    path .. "MP7_Fire_2_Suppressed.ogg",
+    path .. "MP7_Fire_3_Suppressed.ogg",
+    path .. "MP7_Fire_4_Suppressed.ogg"
 }
 
 SWEP.DryFireSingleAction = false
@@ -242,21 +243,21 @@ SWEP.EnterSightsSound = ratel
 SWEP.ExitSightsSound = ratel
 
 SWEP.DistantShootSound = {
-    path .. "P90_Reflection_Ext_Base_01.ogg",
-    path .. "P90_Reflection_Ext_Base_02.ogg"
+    path .. "MP7_Reflection_Ext_Base_01.ogg",
+    path .. "MP7_Reflection_Ext_Base_01.ogg"
 }
 SWEP.DistantShootSoundIndoor = {
-    path .. "P90-1.ogg",
-    path .. "P90-2.ogg"
+    path .. "MP7_Fire_1.ogg",
+    path .. "MP7_Fire_2.ogg"
 }
 
 SWEP.DistantShootSoundSilenced = {
-    common .. "P90_Suppressed_Reflection_EXT_Base_01.ogg",
-    common .. "P90_Suppressed_Reflection_EXT_Base_02.ogg"
+    common .. "Mp7_Suppressed_Reflection_EXT_Base_01.ogg",
+    common .. "Mp7_Suppressed_Reflection_EXT_Base_02.ogg"
 }
 SWEP.DistantShootSoundSilencedIndoor = {
-    common .. "P90_Suppressed_Reflection_Int_Base_01.ogg",
-    common .. "P90_Suppressed_Reflection_Int_Base_02.ogg"
+    common .. "Mp7_Suppressed_Reflection_INT_Base_01.ogg",
+    common .. "Mp7_Suppressed_Reflection_INT_Base_02.ogg"
 }
 
 SWEP.FiremodeSound				= "weapons/arc9_ron_shared/SwitchToSemi.ogg"
@@ -538,11 +539,11 @@ SWEP.Animations = {
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 0},
 			{s = rottle,									t = 0},
-			{s = path .. "P90_Reload_Start.ogg",		t = 0.075},
+			{s = path .. "MP7_Reload_Start_V2.ogg",		t = 0.075},
 			{s = rattel,									t = 0.3},
-			{s = path .. "P90_Reload_MagOut.ogg",				t = 0.3, c = ci},
+			{s = path .. "MP7_Reload_MagOut.ogg",				t = 1, c = ci},
 			{s = rattel,									t = 0.35},
-			{s = path .. "P90_Reload_MagIn.ogg",					t = 1.6, c = ci},
+			{s = path .. "MP7_Reload_MagIn.ogg",					t = 1.65, c = ci},
 			{s = rottle,									t = 0.5},
 			{s = common .. "magpouch_replace_small.ogg",	t = 1.25},
 		},
@@ -592,14 +593,13 @@ SWEP.Animations = {
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 1.8},
 			{s = rattel,								t = 0},
-			{s = path .. "P90_Reload_Empty_Start.ogg",			t = 0, c = ci},
-			{s = path .. "P90_Reload_Empty_Mag_Release.ogg",	t = 0.35},
-			{s = path .. "P90_Reload_Empty_Mag_Out.ogg",				t = 0.4, c = ci},
-			{s = path .. "P90_Reload_Empty_Mag_In.ogg",				t = 1.6, c = ci},
-			{s = common .. "weap_smg_mag_drop_04.ogg",		t = 1.5},
+			{s = path .. "MP7_Reload_Empty_Start.ogg",			t = 0, c = ci},
+			{s = path .. "MP7_Reload_Empty_MagOut.ogg",				t = 0.35, c = ci},
+			{s = path .. "MP7_Reload_Empty_MagIn.ogg",				t = 0.7, c = ci},
+			{s = common .. "weap_smg_mag_drop_04.ogg",		t = 0.6},
 			{s = rattel,								t = 1.2},
 			{s = path .. "sliderel_deact.ogg",			t = 1.62, c = ci},
-			{s = path .. "P90_Reload_Empty_Bolt.ogg",					t = 2.2, c = ci},
+			{s = path .. "MP7_Reload_Empty_BoltRelease.ogg",					t = 1.1, c = ci},
 			{s = rottle,								t = 1.9},
 		},
 	},
