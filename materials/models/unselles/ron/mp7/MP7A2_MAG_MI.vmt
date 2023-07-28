@@ -4,7 +4,7 @@
     "$bumpmap" "models\unselles\ron\mp7\mag_n"
     "$phongexponenttexture" "models\unselles\ron\mp7\mag_e"
 
-    "$color2" "[0 0 0]"
+    "$color2" "[1 1 1]"
     "$blendtintbybasealpha" "1"
 
     "$phong" "1"
@@ -28,7 +28,7 @@
         {
             "specularity" "0.5"             //0.25, 0.5, 0.75, 1
             "min" "0"
-            "max" "0.2"                       
+            "max" "0.1"                       
         }
     }
 }

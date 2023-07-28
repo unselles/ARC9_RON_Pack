@@ -271,11 +271,11 @@ SWEP.ReloadInSights				= false -- This weapon can aim down sights while reloadin
 SWEP.Animations = {
 	["ready"] = {
 		Source				= "ready",
-		Time				= 3,
+		Time				= 2.75,
 		EventTable = {
-			{s	= path .. "p90_first_draw.ogg",			t = 0},
+			{s	= path .. "MP7_Ammo_FirstDraw.ogg",			t = 0},
 			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
-			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 20},
+			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 0},
 		},
 	},
 	["idle"] = {
@@ -608,9 +608,9 @@ SWEP.Animations = {
 	
 	["inspect_enter"] = {
         Source = "inspect_enter",
-		Time				= 2,
+		Time				= 1.65,
 		EventTable = {
-			{s	= path .. "p90_first_draw.ogg",			t = 0},
+			{s	= path .. "MP7_Ammo_CHeck.ogg",			t = 0},
 			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
 			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 0},
 		},

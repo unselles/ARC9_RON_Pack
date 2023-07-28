@@ -37,8 +37,8 @@ SWEP.Crosshair				= true
 
 SWEP.MirrorVMWM				= true
 SWEP.WorldModelOffset = {
-	Pos				= Vector(-8, 2, -6),
-	Ang				= Angle(-5, 0, 180),
+	Pos				= Vector(-3, 2, -5),
+	Ang				= Angle(0, 0, 180),
 	Scale				= 1
 }
 
@@ -102,7 +102,7 @@ SWEP.PostBashTime				= 0.5
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil				= 4
+SWEP.Recoil				= 8
 
 -- Static increasing recoil
 SWEP.RecoilUp				= 1
@@ -125,7 +125,7 @@ SWEP.RecoilAutoControlMultHipFire	= 0.5
 
 -------------------------- SPREAD
 
-SWEP.Spread				= math.rad(1)
+SWEP.Spread				= math.rad(0.1)
 
 SWEP.SpreadMultHipFire				= 2
 SWEP.SpreadMultMidAir				= 2
@@ -170,7 +170,7 @@ SWEP.IronSights = {
 		Pos			= Vector(0, 15, -4),
 		Ang			= Angle(0, 0, -45),
 	},
-	ViewModelFOV = 50,
+	ViewModelFOV = 75,
 	Magnification	= 1.1,
 }
 
@@ -214,26 +214,18 @@ SWEP.CamOffsetAng			= Angle(0, 90, 0)
 -------------------------- SOUNDS
 
 
-local path					= ")^weapons/arc9_ron_p90/"
+local path					= ")^weapons/arc9_ron_python/"
 local common				= ")^weapons/arc9_ron_shared/"
-SWEP.FirstShootSound			= path .. "P90-1.ogg"
-SWEP.ShootSound					= path .. "P90-2.ogg"
+SWEP.FirstShootSound			= path .. "Python_Fire_01.ogg"
+SWEP.ShootSound					= path .. "Python_Fire_02.ogg"
 SWEP.DistantShootSound			= path .. ""
-SWEP.ShootSoundSilenced			= path .. "p90_Fire_1_Suppressed"
-SWEP.DistantShootSoundSilenced	= common .. ""
 SWEP.DryFireSound				= path .. "weap_mp5_dryfire_03.ogg"
 
 SWEP.ShootSound = {
-    path .. "P90-1.ogg",
-    path .. "P90-2.ogg",
-    path .. "P90-3.ogg",
-    path .. "P90-4.ogg"
-}
-SWEP.ShootSoundSilenced = {
-    path .. "p90_Fire_1_Suppressed.ogg",
-    path .. "p90_Fire_2_Suppressed.ogg",
-    path .. "p90_Fire_3_Suppressed.ogg",
-    path .. "p90_Fire_4_Suppressed.ogg"
+    path .. "Python_Fire_01.ogg",
+    path .. "Python_Fire_02.ogg",
+    path .. "Python_Fire_03.ogg",
+    path .. "Python_Fire_04.ogg"
 }
 
 SWEP.DryFireSingleAction = false
@@ -242,21 +234,12 @@ SWEP.EnterSightsSound = ratel
 SWEP.ExitSightsSound = ratel
 
 SWEP.DistantShootSound = {
-    path .. "P90_Reflection_Ext_Base_01.ogg",
-    path .. "P90_Reflection_Ext_Base_02.ogg"
+    path .. "Python_Reflection_Ext_Base_01.ogg",
+    path .. "Python_Reflection_Ext_Base_02.ogg"
 }
 SWEP.DistantShootSoundIndoor = {
-    path .. "P90-1.ogg",
-    path .. "P90-2.ogg"
-}
-
-SWEP.DistantShootSoundSilenced = {
-    common .. "P90_Suppressed_Reflection_EXT_Base_01.ogg",
-    common .. "P90_Suppressed_Reflection_EXT_Base_02.ogg"
-}
-SWEP.DistantShootSoundSilencedIndoor = {
-    common .. "P90_Suppressed_Reflection_Int_Base_01.ogg",
-    common .. "P90_Suppressed_Reflection_Int_Base_02.ogg"
+    path .. "Python_Fire_01.ogg",
+    path .. "Python_Fire_02.ogg"
 }
 
 SWEP.FiremodeSound				= "weapons/arc9_ron_shared/SwitchToSemi.ogg"
@@ -287,10 +270,11 @@ SWEP.Animations = {
 	},
 	["draw"] = {
 		Source				= "draw",
+		Time				= 30 / 60,
 		EventTable = {
-			{s	= common .. "Universal_Long_Draw_02.ogg",			t = 0.35},
-			{s	= common .. "shoulder.ogg",			t = 0.15},
-			{s	= ratel,							t = 0.2},
+			{s	= path .. "Python_Draw.ogg",			t = 0},
+			{s	= common .. "Universal_Long_Draw_01.ogg",			t = 0},
+			{s	= ratel,							t = 0},
 		},
 	},
 	["draw_empty"] = {
@@ -307,7 +291,7 @@ SWEP.Animations = {
 		Time				= 20 / 30,
 		EventTable = {
 			{s	= ratel,							t = 0},
-			{s	= common .. "Universal_Long_Holster_02.ogg",			t = 0},
+			{s	= path .. "Python_Holster.ogg",			t = 0},
 		},
 	},
 	["holster_empty"] = {
@@ -320,7 +304,7 @@ SWEP.Animations = {
 	},
 	["fire"] = {
 		Source				= "fire",
-		Time				= 1.5,
+		Time				= 1,
 		ShellEjectAt				= 0.03,
 		EventTable = {
 			{s	= {
@@ -332,7 +316,7 @@ SWEP.Animations = {
 	},
 	["fire_empty"] = {
 		Source				= "fire_empty",
-		Time				= 16 / 30,
+		Time				= 1,
 		ShellEjectAt				= 0.03,
 		EventTable = {
 			{s	= path .. "mech_last.ogg",			t = 0},
@@ -538,19 +522,21 @@ SWEP.Animations = {
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 0},
 			{s = rottle,									t = 0},
-			{s = path .. "P90_Reload_Start.ogg",		t = 0.075},
+			{s = path .. "Python_ReloadStart.ogg",		t = 0.075},
 			{s = rattel,									t = 0.3},
-			{s = path .. "P90_Reload_MagOut.ogg",				t = 0.3, c = ci},
+			{s = path .. "Python_ReloadCylOut.ogg",				t = 0.1, c = ci},
+			{s = path .. "Python_ReloadBulletEject.ogg",				t = 0.3, c = ci},
 			{s = rattel,									t = 0.35},
-			{s = path .. "P90_Reload_MagIn.ogg",					t = 1.6, c = ci},
+			{s = path .. "Python_ReloadBulletInsert.ogg",					t = 1.4, c = ci},
+			{s = path .. "Python_ReloadCylIn.ogg",					t = 2.1, c = ci},
 			{s = rottle,									t = 0.5},
-			{s = common .. "magpouch_replace_small.ogg",	t = 1.25},
+			{s = common .. "Cloth-ReloadEnd.ogg",	t = 2.3},
 		},
 	},
 	["reload_empty"] = {
 		Source				= "reload_empty",
 		TPAnim				= ACT_HL2MP_GESTURE_RELOAD_AR2,
-		Time				= 20 / 10,
+		Time				= 30 / 10,
 		MinProgress				= 1.5,
 		LastClip1OutTime				= 0.7,
 		IKTimeLine = {
@@ -577,30 +563,24 @@ SWEP.Animations = {
 		},
 		EventTable = {
 			{v1	= 0, v2	= 5000, vt	= 0.1,		t = 0},
-			{v1	= 10000, v2	= 10000, vt	= 0.1,	t = 0.4},
-			{v1	= 10000, v2	= 20000, vt	= 0.1,	t = 0.9},
-			{v1	= 40000, v2	= 40000, vt	= 0.2,	t = 1.7},
-			{v1	= 0, v2	= 5000, vt	= 0.1,		t = 2.1},
+			{v1	= 10000, v2	= 10000, vt	= 0.1,	t = 0.35},
+			{v1	= 10000, v2	= 20000, vt	= 0.3,	t = 0.9},
+			{v1	= 0, v2	= 5000, vt	= 0.1,		t = 1.55},
 			{FOV = -6,
-			FOV_Start = 1.8,
-			FOV_End = 2.4,
+			FOV_Start = 1.4,
+			FOV_End = 1.7,
 			FOV_FuncStart = ARC9.Ease.OutCirc,
 			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 0},
-			{FOV = 6,
-			FOV_Start = 0.2,
-			FOV_End = 0.4,
-			FOV_FuncStart = ARC9.Ease.OutCirc,
-			FOV_FuncEnd = ARC9.Ease.InCirc,	t = 1.8},
-			{s = rattel,								t = 0},
-			{s = path .. "P90_Reload_Empty_Start.ogg",			t = 0, c = ci},
-			{s = path .. "P90_Reload_Empty_Mag_Release.ogg",	t = 0.35},
-			{s = path .. "P90_Reload_Empty_Mag_Out.ogg",				t = 0.4, c = ci},
-			{s = path .. "P90_Reload_Empty_Mag_In.ogg",				t = 1.6, c = ci},
-			{s = common .. "weap_smg_mag_drop_04.ogg",		t = 1.5},
-			{s = rattel,								t = 1.2},
-			{s = path .. "sliderel_deact.ogg",			t = 1.62, c = ci},
-			{s = path .. "P90_Reload_Empty_Bolt.ogg",					t = 2.2, c = ci},
-			{s = rottle,								t = 1.9},
+			{s = rottle,									t = 0},
+			{s = path .. "Python_ReloadStart.ogg",		t = 0.075},
+			{s = rattel,									t = 0.3},
+			{s = path .. "Python_ReloadCylOut.ogg",				t = 0.1, c = ci},
+			{s = path .. "Python_ReloadBulletEject.ogg",				t = 0.3, c = ci},
+			{s = rattel,									t = 0.35},
+			{s = path .. "Python_ReloadBulletInsert.ogg",					t = 1.4, c = ci},
+			{s = path .. "Python_ReloadCylIn.ogg",					t = 2.1, c = ci},
+			{s = rottle,									t = 0.5},
+			{s = common .. "Cloth-ReloadEnd.ogg",	t = 2.3},
 		},
 	},
 	

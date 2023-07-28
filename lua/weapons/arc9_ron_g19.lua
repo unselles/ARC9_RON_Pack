@@ -32,7 +32,7 @@ SWEP.ViewModel				= "models/weapons/arc9/g19.mdl"
 SWEP.WorldModel				= "models/weapons/arc9/g19.mdl"
 SWEP.ViewModelFOVBase		= 70
 
-SWEP.Slot					= 2
+SWEP.Slot					= 1
 SWEP.Crosshair				= true
 
 SWEP.MirrorVMWM				= true
@@ -125,7 +125,7 @@ SWEP.RecoilAutoControlMultHipFire	= 0.5
 
 -------------------------- SPREAD
 
-SWEP.Spread				= math.rad(1)
+SWEP.Spread				= math.rad(0.8)
 
 SWEP.SpreadMultHipFire				= 2
 SWEP.SpreadMultMidAir				= 2
@@ -170,7 +170,7 @@ SWEP.IronSights = {
 		Pos			= Vector(0, 15, -4),
 		Ang			= Angle(0, 0, -45),
 	},
-	ViewModelFOV = 50,
+	ViewModelFOV = 75,
 	Magnification	= 1.1,
 }
 
@@ -536,7 +536,7 @@ SWEP.Animations = {
 	["reload_empty"] = {
 		Source				= "reload_empty",
 		TPAnim				= ACT_HL2MP_GESTURE_RELOAD_AR2,
-		Time				= 88 / 30,
+		Time				= 2.4,
 		MinProgress				= 1,
 		LastClip1OutTime				= 0.7,
 		IKTimeLine = {
