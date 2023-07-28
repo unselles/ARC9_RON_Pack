@@ -99,30 +99,55 @@ SWEP.PostBashTime				= 0.5
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil				= 1.5
+SWEP.Recoil				= 3
 
 -- Static increasing recoil
-SWEP.RecoilUp				= 1
-SWEP.RecoilSide				= 1
+SWEP.RecoilUp				= 0.8
+SWEP.RecoilSide				= 0.3
+SWEP.RecoilUpAddSighted = -1 -- Multiplier for vertical recoil
 
 -- Unpredictable circle recoil
-SWEP.RecoilRandomUp			= 0.1
-SWEP.RecoilRandomSide		= 0.4
+SWEP.RecoilRandomUp			= 0.2
+SWEP.RecoilRandomSide		= 0.3
 
 SWEP.RecoilDissipationRate	= 15 -- How much recoil dissipates per second.
-SWEP.RecoilResetTime		= 0.1 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilResetTime		= 0.2 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilFullResetTime = 0.10
 
-SWEP.RecoilAutoControl		= 0
+SWEP.RecoilAutoControl		= 5
+SWEP.RecoilAutoControlMultHipFire = 0.2
+SWEP.RecoilAutoControlMultSights = 0.2
+SWEP.RecoilAutoControlMultCrouch = 3
 
-SWEP.RecoilKick				= 0.1
+SWEP.RecoilKick				= 1
 SWEP.RecoilPatternDrift		= 5000
 
 SWEP.RecoilMultHipFire				= 1.25
 SWEP.RecoilAutoControlMultHipFire	= 0.5
 
+-- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true 
+SWEP.VisualRecoil = 1
+SWEP.VisualRecoilMultHipFire = 0.15
+SWEP.VisualRecoilMultSights = 0.015
+SWEP.VisualRecoilMultCrouch = 0.10
+
+SWEP.VisualRecoilCenter = Vector(0, 0, 0)
+SWEP.VisualRecoilUp = 3
+SWEP.VisualRecoilSide = 0.2 -- Horizontal tilt
+SWEP.VisualRecoilSideAddSighted = -20
+SWEP.VisualRecoilRoll = 50 -- Roll tilt
+
+SWEP.VisualRecoilPositionBump = 1
+SWEP.VisualRecoilPositionBumpUp = -0.75
+
+SWEP.VisualRecoilPunch = 7 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilPunchSights = 0 -- How far back visual recoil moves the gun
+
 -------------------------- SPREAD
 
-SWEP.Spread				= math.rad(1)
+SWEP.Spread				= math.rad(0.1)
 
 SWEP.SpreadMultHipFire				= 2
 SWEP.SpreadMultMidAir				= 2
@@ -131,8 +156,8 @@ SWEP.SpreadMultCrouch				= 0.5
 
 -------------------------- HANDLING
 
-SWEP.FreeAimRadius			= 10 / 1.25 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway					= 0.1 + 1 -- How much the gun sways.
+SWEP.FreeAimRadius			= 10 / 5.25 -- In degrees, how much this gun can free aim in hip fire.
+SWEP.Sway					= 0.1 + 0.1 -- How much the gun sways.
 
 SWEP.SwayMultMidAir			= 1.8
 SWEP.SwayMultMove			= 1.05
@@ -141,10 +166,10 @@ SWEP.SwayMultShooting		= 1.0
 
 SWEP.FreeAimRadiusSights	= 1
 
-SWEP.SwayMultSights				= 0.3
+SWEP.SwayMultSights				= 0.1
 
-SWEP.AimDownSightsTime		= 0.2 -- How long it takes to go from hip fire to aiming down sights.
-SWEP.SprintToFireTime		= 0.3 -- How long it takes to go from sprinting to being able to fire.
+SWEP.AimDownSightsTime		= 0.35 -- How long it takes to go from hip fire to aiming down sights.
+SWEP.SprintToFireTime		= 0.4 -- How long it takes to go from sprinting to being able to fire.
 
 SWEP.SpeedMult				= 0.95
 SWEP.SpeedMultSights		= 0.75
@@ -167,7 +192,7 @@ SWEP.IronSights = {
 		Pos			= Vector(0, 0, 0),
 		Ang			= Angle(0, 0, 0),
 	},
-	ViewModelFOV = 50,
+	ViewModelFOV = 65,
 	Magnification	= 1.1,
 }
 
@@ -318,7 +343,7 @@ SWEP.Animations = {
 	},
 	["fire"] = {
 		Source				= "fire",
-		Time				= 1.5,
+		Time				= 0.5,
 		ShellEjectAt				= 0.03,
 		EventTable = {
 			{s	= {
@@ -500,7 +525,7 @@ SWEP.Animations = {
 	["reload"] = {
 		Source				= "reload",
 		TPAnim				= ACT_HL2MP_GESTURE_RELOAD_AR2,
-		Time				= 3,
+		Time				= 2.4,
 		MinProgress				= 1.1,
 		LastClip1OutTime				= 0.9,
 		IKTimeLine = {

@@ -102,26 +102,52 @@ SWEP.PostBashTime				= 0.5
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil				= 1
+SWEP.Recoil				= 0.5
 
 -- Static increasing recoil
 SWEP.RecoilUp				= 1
 SWEP.RecoilSide				= 1
+SWEP.RecoilUpAddSighted = -1 -- Multiplier for vertical recoil
 
 -- Unpredictable circle recoil
-SWEP.RecoilRandomUp			= 0.1
-SWEP.RecoilRandomSide		= 0.4
+SWEP.RecoilRandomUp			= 0.2
+SWEP.RecoilRandomSide		= 0.3
 
 SWEP.RecoilDissipationRate	= 15 -- How much recoil dissipates per second.
-SWEP.RecoilResetTime		= 0.1 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilResetTime		= 0.2 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilFullResetTime = 0.10
 
-SWEP.RecoilAutoControl		= 0
+SWEP.RecoilAutoControl		= 5
+SWEP.RecoilAutoControlMultHipFire = 0.2
+SWEP.RecoilAutoControlMultSights = 0.2
+SWEP.RecoilAutoControlMultCrouch = 3
 
-SWEP.RecoilKick				= 0.1
+SWEP.RecoilKick				= 1
 SWEP.RecoilPatternDrift		= 5000
 
 SWEP.RecoilMultHipFire				= 1.25
 SWEP.RecoilAutoControlMultHipFire	= 0.5
+
+-- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true 
+SWEP.VisualRecoil = 1
+SWEP.VisualRecoilMultHipFire = 0.15
+SWEP.VisualRecoilMultSights = 0.015
+SWEP.VisualRecoilMultCrouch = 0.10
+
+SWEP.VisualRecoilCenter = Vector(0, 0, 0)
+SWEP.VisualRecoilUp = 3
+SWEP.VisualRecoilSide = 0.2 -- Horizontal tilt
+SWEP.VisualRecoilSideAddSighted = -20
+SWEP.VisualRecoilRoll = 50 -- Roll tilt
+
+SWEP.VisualRecoilPositionBump = 1
+SWEP.VisualRecoilPositionBumpUp = -0.75
+
+SWEP.VisualRecoilPunch = 5 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilPunchSights = 0 -- How far back visual recoil moves the gun
+
 
 -------------------------- SPREAD
 
@@ -621,24 +647,11 @@ SWEP.Animations = {
 
 SWEP.Attachments = {
 	{
-		PrintName						= "FINISH",
-		DefaultName						= "Weapon Finish",
-		DefaultCompactName				= "FINISH",
-		Category						= "ud_glock_skin",
-		Bone							= "glock_parent",
-		Pos								= Vector(0, 0, 0),
-		Ang								= Angle(0, 0, 0),
-		Icon_Offset						= Vector(0, 0, 4)
-	},
-}
-
-SWEP.Attachments = {
-	{
 		PrintName						= "VMLight",
 		DefaultName						= "VM Light",
 		DefaultCompactName				= "VM",
 		Category						= "ron_vmlight",
-		Bone							= "laser_socket",
+		Bone							= "light_socket",
 		Pos								= Vector(0, 0, 0),
 		Ang								= Angle(0, 0, 0),
 		Icon_Offset						= Vector(0, 0, 4)

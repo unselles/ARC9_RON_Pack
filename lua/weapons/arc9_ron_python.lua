@@ -81,7 +81,7 @@ SWEP.DropMagazineTime				= 0
 SWEP.RPM				= 75
 SWEP.Firemodes = {
 	{
-		Mode				= -1
+		Mode				= 1
 	},
 	{
 		Mode				= 1
@@ -102,26 +102,51 @@ SWEP.PostBashTime				= 0.5
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil				= 8
+SWEP.Recoil				= 1
 
 -- Static increasing recoil
-SWEP.RecoilUp				= 1
+SWEP.RecoilUp				= 2.5
 SWEP.RecoilSide				= 1
+SWEP.RecoilUpAddSighted = -1 -- Multiplier for vertical recoil
 
 -- Unpredictable circle recoil
-SWEP.RecoilRandomUp			= 0.2
-SWEP.RecoilRandomSide		= 0.6
+SWEP.RecoilRandomUp			= 0.1
+SWEP.RecoilRandomSide		= 0.4
 
 SWEP.RecoilDissipationRate	= 15 -- How much recoil dissipates per second.
-SWEP.RecoilResetTime		= 0.1 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilResetTime		= 0.2 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilFullResetTime = 0.10
 
-SWEP.RecoilAutoControl		= 0
+SWEP.RecoilAutoControl		= 5
+SWEP.RecoilAutoControlMultHipFire = 0.2
+SWEP.RecoilAutoControlMultSights = 0.2
+SWEP.RecoilAutoControlMultCrouch = 3
 
-SWEP.RecoilKick				= 1.2
+SWEP.RecoilKick				= 1
 SWEP.RecoilPatternDrift		= 5000
 
 SWEP.RecoilMultHipFire				= 1.25
 SWEP.RecoilAutoControlMultHipFire	= 0.5
+
+-- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true 
+SWEP.VisualRecoil = 4.5
+SWEP.VisualRecoilMultHipFire = 0.15
+SWEP.VisualRecoilMultSights = -0.02
+SWEP.VisualRecoilMultCrouch = 0.10
+
+SWEP.VisualRecoilCenter = Vector(0, 25, 0)
+SWEP.VisualRecoilUp = -0.8
+SWEP.VisualRecoilSide = 0.2 -- Horizontal tilt
+SWEP.VisualRecoilSideAddSighted = -20
+SWEP.VisualRecoilRoll = 50 -- Roll tilt
+
+SWEP.VisualRecoilPositionBump = 0.75
+SWEP.VisualRecoilPositionBumpUp = 1.2
+
+SWEP.VisualRecoilPunch = 6.5 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilPunchSights = 0 -- How far back visual recoil moves the gun
 
 -------------------------- SPREAD
 
@@ -134,8 +159,9 @@ SWEP.SpreadMultCrouch				= 0.5
 
 -------------------------- HANDLING
 
-SWEP.FreeAimRadius			= 10 / 1.25 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway					= 0.1 + 1 -- How much the gun sways.
+SWEP.FreeAimRadius			= 1 / 1.25 -- In degrees, how much this gun can free aim in hip fire.
+SWEP.Sway					= 0.1 + 0 -- How much the gun sways.
+SWEP.SwayMove = 0.5
 
 SWEP.SwayMultMidAir			= 1.8
 SWEP.SwayMultMove			= 1.05
@@ -149,12 +175,15 @@ SWEP.SwayMultSights				= 0.3
 SWEP.AimDownSightsTime		= 0.2 -- How long it takes to go from hip fire to aiming down sights.
 SWEP.SprintToFireTime		= 0.3 -- How long it takes to go from sprinting to being able to fire.
 
+SWEP.Speed = 1
 SWEP.SpeedMult				= 0.95
 SWEP.SpeedMultSights		= 0.75
 SWEP.SpeedMultShooting		= 0.75
 SWEP.SpeedMultMelee			= 0.75
 SWEP.SpeedMultCrouch		= 1
 SWEP.SpeedMultBlindFire		= 1
+
+SWEP.BarrelLength = 30 -- Distance for nearwalling
 
 -------------------------- TRACERS
 
@@ -170,7 +199,7 @@ SWEP.IronSights = {
 		Pos			= Vector(0, 15, -4),
 		Ang			= Angle(0, 0, -45),
 	},
-	ViewModelFOV = 75,
+	ViewModelFOV = 85,
 	Magnification	= 1.1,
 }
 
@@ -304,7 +333,7 @@ SWEP.Animations = {
 	},
 	["fire"] = {
 		Source				= "fire",
-		Time				= 1,
+		Time				= 0.9,
 		ShellEjectAt				= 0.03,
 		EventTable = {
 			{s	= {
@@ -588,9 +617,9 @@ SWEP.Animations = {
 	
 	["inspect_enter"] = {
         Source = "inspect_enter",
-		Time				= 2,
+		Time				= 1,
 		EventTable = {
-			{s	= path .. "p90_first_draw.ogg",			t = 0},
+			{s	= path .. "Python_AmmoCheck.ogg",			t = 0},
 			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
 			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 0},
 		},
@@ -598,19 +627,6 @@ SWEP.Animations = {
 }
 
 -------------------------- ATTACHMENTS
-
-SWEP.Attachments = {
-	{
-		PrintName						= "FINISH",
-		DefaultName						= "Weapon Finish",
-		DefaultCompactName				= "FINISH",
-		Category						= "ud_glock_skin",
-		Bone							= "glock_parent",
-		Pos								= Vector(0, 0, 0),
-		Ang								= Angle(0, 0, 0),
-		Icon_Offset						= Vector(0, 0, 4)
-	},
-}
 
 SWEP.Attachments = {
 	{

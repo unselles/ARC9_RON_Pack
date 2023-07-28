@@ -4,18 +4,18 @@
     "$bumpmap" "models\unselles\ron\python\MI_Shell_Casing_357_n"
     "$phongexponenttexture" "models\unselles\ron\python\MI_Shell_Casing_357_e"
 
-    "$color2" "[1 1 1]"
+    "$color2" "[2 2 2]"
     "$blendtintbybasealpha" "1"
 
     "$phong" "1"
-    "$phongboost" "1.5"
+    "$phongboost" "40"
     "$phongfresnelranges" "[1 0.5 0]"
-    "$phongalbedotint" "0"
+    "$phongalbedotint" "1"
 
     "$rimlight" "1"
     "$rimlightexponent" "100"
     "$rimmask" "1"
-    "$rimlightboost" "1"
+    "$rimlightboost" "0.2"
 
     "$normalmapalphaenvmapmask" "1"
     "$envmapfresnel" "1"
@@ -28,7 +28,7 @@
         {
             "specularity" "0.5"             //0.25, 0.5, 0.75, 1
             "min" "0"
-            "max" "0.1"                       
+            "max" "0.2"                       
         }
     }
 }

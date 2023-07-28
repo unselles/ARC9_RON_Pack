@@ -102,26 +102,51 @@ SWEP.PostBashTime				= 0.5
 -------------------------- RECOIL
 
 -- General recoil multiplier
-SWEP.Recoil				= 1
+SWEP.Recoil				= 3
 
 -- Static increasing recoil
-SWEP.RecoilUp				= 1
-SWEP.RecoilSide				= 1
+SWEP.RecoilUp				= 0.8
+SWEP.RecoilSide				= 0.3
+SWEP.RecoilUpAddSighted = -1 -- Multiplier for vertical recoil
 
 -- Unpredictable circle recoil
-SWEP.RecoilRandomUp			= 0.1
-SWEP.RecoilRandomSide		= 0.4
+SWEP.RecoilRandomUp			= 0.2
+SWEP.RecoilRandomSide		= 0.3
 
 SWEP.RecoilDissipationRate	= 15 -- How much recoil dissipates per second.
-SWEP.RecoilResetTime		= 0.1 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilResetTime		= 0.2 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilFullResetTime = 0.10
 
-SWEP.RecoilAutoControl		= 0
+SWEP.RecoilAutoControl		= 5
+SWEP.RecoilAutoControlMultHipFire = 0.2
+SWEP.RecoilAutoControlMultSights = 0.2
+SWEP.RecoilAutoControlMultCrouch = 3
 
-SWEP.RecoilKick				= 0.1
+SWEP.RecoilKick				= 1
 SWEP.RecoilPatternDrift		= 5000
 
 SWEP.RecoilMultHipFire				= 1.25
 SWEP.RecoilAutoControlMultHipFire	= 0.5
+
+-- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true 
+SWEP.VisualRecoil = 1
+SWEP.VisualRecoilMultHipFire = 0.15
+SWEP.VisualRecoilMultSights = 0.015
+SWEP.VisualRecoilMultCrouch = 0.10
+
+SWEP.VisualRecoilCenter = Vector(0, 0, 0)
+SWEP.VisualRecoilUp = 3
+SWEP.VisualRecoilSide = 0.2 -- Horizontal tilt
+SWEP.VisualRecoilSideAddSighted = -20
+SWEP.VisualRecoilRoll = 50 -- Roll tilt
+
+SWEP.VisualRecoilPositionBump = 1
+SWEP.VisualRecoilPositionBumpUp = -0.75
+
+SWEP.VisualRecoilPunch = 7 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilPunchSights = 0 -- How far back visual recoil moves the gun
 
 
 -------------------------- SPREAD
@@ -607,8 +632,8 @@ SWEP.Animations = {
 	-- Inspect --
 	
 	["inspect_enter"] = {
-        Source = "inspect_enter",
-		Time				= 1.65,
+        Source = "enter_inspect",
+		Time				= 0,
 		EventTable = {
 			{s	= path .. "MP7_Ammo_CHeck.ogg",			t = 0},
 			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},

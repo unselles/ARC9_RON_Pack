@@ -3,7 +3,7 @@ local ATT = {}
 ATT.PrintName = "VM Light"
 ATT.CompactName = "VM"
 ATT.Icon = Material("entities/att/acwatt_ud_glock_material.png", "mips smooth")
-ATT.Description = "VM Light."
+ATT.Description = "VM Light"
 ATT.Category = {"ron_vmlight"}
 ATT.Model = "models/shared/attachments/vmlight.mdl"
 

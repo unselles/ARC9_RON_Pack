@@ -6,7 +6,7 @@ SWEP.Spawnable				= true
 SWEP.Category				= "ARC9 - Ready or Not"
 
 SWEP.PrintName				= "Glock 19 Gen 5"
-SWEP.TrueName				= "G19"
+SWEP.TrueName				= "G19G5"
 
 SWEP.Class					= "Pistol"
 SWEP.Trivia = {
@@ -105,23 +105,48 @@ SWEP.PostBashTime				= 0.5
 SWEP.Recoil				= 1
 
 -- Static increasing recoil
-SWEP.RecoilUp				= 1
-SWEP.RecoilSide				= 1
+SWEP.RecoilUp				= 0.8
+SWEP.RecoilSide				= 0.3
+SWEP.RecoilUpAddSighted = -1 -- Multiplier for vertical recoil
 
 -- Unpredictable circle recoil
 SWEP.RecoilRandomUp			= 0.1
 SWEP.RecoilRandomSide		= 0.4
 
 SWEP.RecoilDissipationRate	= 15 -- How much recoil dissipates per second.
-SWEP.RecoilResetTime		= 0.1 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilResetTime		= 0.2 -- How long the gun must go before the recoil pattern starts to reset.
+SWEP.RecoilFullResetTime = 0.10
 
-SWEP.RecoilAutoControl		= 0
+SWEP.RecoilAutoControl		= 5
+SWEP.RecoilAutoControlMultHipFire = 0.2
+SWEP.RecoilAutoControlMultSights = 0.1
+SWEP.RecoilAutoControlMultCrouch = 3
 
-SWEP.RecoilKick				= 0.1
+SWEP.RecoilKick				= 1
 SWEP.RecoilPatternDrift		= 5000
 
 SWEP.RecoilMultHipFire				= 1.25
 SWEP.RecoilAutoControlMultHipFire	= 0.5
+
+-- VISUAL RECOIL
+
+SWEP.UseVisualRecoil = true 
+SWEP.VisualRecoil = 2.5
+SWEP.VisualRecoilMultHipFire = 0.15
+SWEP.VisualRecoilMultSights = -0.05
+SWEP.VisualRecoilMultCrouch = 0.10
+
+SWEP.VisualRecoilCenter = Vector(0, 0, -10)
+SWEP.VisualRecoilUp = 5
+SWEP.VisualRecoilSide = 0.2 -- Horizontal tilt
+SWEP.VisualRecoilSideAddSighted = -20
+SWEP.VisualRecoilRoll = 50 -- Roll tilt
+
+SWEP.VisualRecoilPositionBump = 0.75
+SWEP.VisualRecoilPositionBumpUp = 0.5
+
+SWEP.VisualRecoilPunch = 5 -- How far back visual recoil moves the gun
+SWEP.VisualRecoilPunchSights = 0 -- How far back visual recoil moves the gun
 
 -------------------------- SPREAD
 
@@ -585,8 +610,8 @@ SWEP.Animations = {
 	-- Inspect --
 	
 	["inspect_enter"] = {
-        Source = "inspect_enter",
-		Time				= 2,
+        Source = "enter_inspect",
+		Time				= 1,
 		EventTable = {
 			{s	= ratel,							t = 0},
 			{s	= path .. "weap_g19_mag_check_01.ogg",			t = 0},
@@ -604,10 +629,10 @@ SWEP.Attachments = {
 		DefaultName						= "VM Light",
 		DefaultCompactName				= "VM",
 		Category						= "ron_vmlight",
-		Bone							= "laser_socket",
-		Pos								= Vector(0, 0, 0),
+		Bone							= "light_socket",
+		Pos								= Vector(0.3, 0, 0.4),
 		Ang								= Angle(180, 180, 0),
-		Icon_Offset						= Vector(0, 0, 0.5)
+		Icon_Offset						= Vector(0, 0, 0)
 	},
 }
 
