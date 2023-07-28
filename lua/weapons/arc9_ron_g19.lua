@@ -600,27 +600,14 @@ SWEP.Animations = {
 
 SWEP.Attachments = {
 	{
-		PrintName						= "FINISH",
-		DefaultName						= "Weapon Finish",
-		DefaultCompactName				= "FINISH",
-		Category						= "ud_glock_skin",
-		Bone							= "glock_parent",
-		Pos								= Vector(0, 0, 0),
-		Ang								= Angle(0, 0, 0),
-		Icon_Offset						= Vector(0, 0, 4)
-	},
-}
-
-SWEP.Attachments = {
-	{
 		PrintName						= "VMLight",
 		DefaultName						= "VM Light",
 		DefaultCompactName				= "VM",
 		Category						= "ron_vmlight",
 		Bone							= "laser_socket",
 		Pos								= Vector(0, 0, 0),
-		Ang								= Angle(0, 0, 0),
-		Icon_Offset						= Vector(0, 0, 4)
+		Ang								= Angle(180, 180, 0),
+		Icon_Offset						= Vector(0, 0, 0.5)
 	},
 }
 
