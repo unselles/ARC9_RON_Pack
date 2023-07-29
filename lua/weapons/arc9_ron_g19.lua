@@ -625,13 +625,13 @@ SWEP.Animations = {
 
 SWEP.Attachments = {
 	{
-		PrintName						= "VMLight",
-		DefaultName						= "VM Light",
-		DefaultCompactName				= "VM",
-		Category						= "ron_vmlight",
+		PrintName						= "WMLight",
+		DefaultName						= "WM Light",
+		DefaultCompactName				= "WML",
+		Category						= "ron_wmlight",
 		Bone							= "light_socket",
 		Pos								= Vector(0.3, 0, 0.4),
-		Ang								= Angle(180, 180, 0),
+		Ang								= Angle(0, 180, 0),
 		Icon_Offset						= Vector(0, 0, 0)
 	},
 }
