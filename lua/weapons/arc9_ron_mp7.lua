@@ -105,9 +105,9 @@ SWEP.PostBashTime				= 0.5
 SWEP.Recoil				= 3
 
 -- Static increasing recoil
-SWEP.RecoilUp				= 0.8
-SWEP.RecoilSide				= 0.3
-SWEP.RecoilUpAddSighted = -1 -- Multiplier for vertical recoil
+SWEP.RecoilUp				= 0.4
+SWEP.RecoilSide				= 0.1
+SWEP.RecoilUpAddSighted = -0.4 -- Multiplier for vertical recoil
 
 -- Unpredictable circle recoil
 SWEP.RecoilRandomUp			= 0.2
@@ -137,9 +137,9 @@ SWEP.VisualRecoilMultSights = 0.015
 SWEP.VisualRecoilMultCrouch = 0.10
 
 SWEP.VisualRecoilCenter = Vector(0, 0, 0)
-SWEP.VisualRecoilUp = 3
+SWEP.VisualRecoilUp = 2
 SWEP.VisualRecoilSide = 0.2 -- Horizontal tilt
-SWEP.VisualRecoilSideAddSighted = -20
+SWEP.VisualRecoilSideAddSighted = 0.05
 SWEP.VisualRecoilRoll = 50 -- Roll tilt
 
 SWEP.VisualRecoilPositionBump = 1
@@ -230,9 +230,9 @@ SWEP.AnimDraw				= false
 
 SWEP.MuzzleParticle			= "muzzleflash_1" -- Used for some muzzle effects.
 
-SWEP.ShellModel				= "models/weapons/arccw/uc_shells/9x19.mdl"
-SWEP.ShellCorrectAng		= Angle(0, 180, 0)
-SWEP.ShellScale				= 1
+SWEP.ShellModel				= "models/shared/shells/9mm/9mm_casing.mdl"
+SWEP.ShellCorrectAng		= Angle(0, 0, 0)
+SWEP.ShellScale				= 1.5
 SWEP.ShellPhysBox			= Vector(0.5, 0.5, 2)
 
 SWEP.CamQCA					= 3
@@ -646,27 +646,22 @@ SWEP.Animations = {
 
 SWEP.Attachments = {
 	{
-		PrintName						= "FINISH",
-		DefaultName						= "Weapon Finish",
-		DefaultCompactName				= "FINISH",
-		Category						= "ud_glock_skin",
-		Bone							= "glock_parent",
-		Pos								= Vector(0, 0, 0),
-		Ang								= Angle(0, 0, 0),
-		Icon_Offset						= Vector(0, 0, 4)
+		PrintName						= "Overbarrel Side",
+		DefaultAttName					= "Default",
+		Category						= {"ron_wmlight","ron_pointer"},
+		Bone							= "pointer_socket",
+		Pos								= Vector(0, 0, 0.0),
+		Ang								= Angle(0, 180, 0),
+		Icon_Offset						= Vector(0, 0, 0)
 	},
-}
-
-SWEP.Attachments = {
 	{
-		PrintName						= "VMLight",
-		DefaultName						= "VM Light",
-		DefaultCompactName				= "VM",
-		Category						= "ron_vmlight",
+		PrintName						= "Overbarrel Up",
+		DefaultAttName					= "Default",
+		Category						= "ron_peq",
 		Bone							= "laser_socket",
-		Pos								= Vector(0, 0, 0),
+		Pos								= Vector(0, 0, 0.0),
 		Ang								= Angle(0, 0, 0),
-		Icon_Offset						= Vector(0, 0, 4)
+		Icon_Offset						= Vector(0, 0, 0)
 	},
 }
 

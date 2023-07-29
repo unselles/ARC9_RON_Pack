@@ -139,7 +139,7 @@ SWEP.VisualRecoilMultCrouch = 0.10
 SWEP.VisualRecoilCenter = Vector(0, 0, 0)
 SWEP.VisualRecoilUp = 3
 SWEP.VisualRecoilSide = 0.2 -- Horizontal tilt
-SWEP.VisualRecoilSideAddSighted = -20
+SWEP.VisualRecoilSideAddSighted = 0.05
 SWEP.VisualRecoilRoll = 50 -- Roll tilt
 
 SWEP.VisualRecoilPositionBump = 1
@@ -230,9 +230,9 @@ SWEP.AnimDraw				= false
 
 SWEP.MuzzleParticle			= "muzzleflash_1" -- Used for some muzzle effects.
 
-SWEP.ShellModel				= "models/weapons/arccw/uc_shells/9x19.mdl"
-SWEP.ShellCorrectAng		= Angle(0, 180, 0)
-SWEP.ShellScale				= 1
+SWEP.ShellModel				= "models/shared/shells/9mm/9mm_casing.mdl"
+SWEP.ShellCorrectAng		= Angle(0, 0, 180)
+SWEP.ShellScale				= 1.5
 SWEP.ShellPhysBox			= Vector(0.5, 0.5, 2)
 
 SWEP.CamQCA					= 3
@@ -647,14 +647,23 @@ SWEP.Animations = {
 
 SWEP.Attachments = {
 	{
-		PrintName						= "VMLight",
+		PrintName						= "VM",
 		DefaultName						= "VM Light",
-		DefaultCompactName				= "VM",
-		Category						= "ron_vmlight",
-		Bone							= "light_socket",
-		Pos								= Vector(0, 0, 0),
+		DefaultCompactName				= "Overbarrel Left",
+		Category						= {"ron_wmlight","ron_pointer"},
+		Bone							= "light_wml_socket",
+		Pos								= Vector(0, 0, 0.65),
+		Ang								= Angle(0, 90, 180),
+		Icon_Offset						= Vector(0, 0, 0)
+	},
+	{
+		PrintName						= "Overbarrel Right",
+		DefaultAttName					= "Default",
+		Category						= "ron_peq",
+		Bone							= "laser_socket",
+		Pos								= Vector(0, 0, 0.0),
 		Ang								= Angle(0, 0, 0),
-		Icon_Offset						= Vector(0, 0, 4)
+		Icon_Offset						= Vector(0, 0, 0)
 	},
 }
 

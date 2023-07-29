@@ -139,7 +139,7 @@ SWEP.VisualRecoilMultCrouch = 0.10
 SWEP.VisualRecoilCenter = Vector(0, 25, 0)
 SWEP.VisualRecoilUp = -0.8
 SWEP.VisualRecoilSide = 0.2 -- Horizontal tilt
-SWEP.VisualRecoilSideAddSighted = -20
+SWEP.VisualRecoilSideAddSighted = 0.05
 SWEP.VisualRecoilRoll = 50 -- Roll tilt
 
 SWEP.VisualRecoilPositionBump = 0.75
@@ -627,17 +627,3 @@ SWEP.Animations = {
 }
 
 -------------------------- ATTACHMENTS
-
-SWEP.Attachments = {
-	{
-		PrintName						= "VMLight",
-		DefaultName						= "VM Light",
-		DefaultCompactName				= "VM",
-		Category						= "ron_vmlight",
-		Bone							= "laser_socket",
-		Pos								= Vector(0, 0, 0),
-		Ang								= Angle(0, 0, 0),
-		Icon_Offset						= Vector(0, 0, 4)
-	},
-}
-

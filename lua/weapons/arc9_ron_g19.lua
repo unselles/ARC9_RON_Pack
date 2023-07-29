@@ -139,7 +139,7 @@ SWEP.VisualRecoilMultCrouch = 0.10
 SWEP.VisualRecoilCenter = Vector(0, 0, -10)
 SWEP.VisualRecoilUp = 5
 SWEP.VisualRecoilSide = 0.2 -- Horizontal tilt
-SWEP.VisualRecoilSideAddSighted = -20
+SWEP.VisualRecoilSideAddSighted = 0.05
 SWEP.VisualRecoilRoll = 50 -- Roll tilt
 
 SWEP.VisualRecoilPositionBump = 0.75
@@ -229,9 +229,9 @@ SWEP.AnimDraw				= false
 
 SWEP.MuzzleParticle			= "muzzleflash_1" -- Used for some muzzle effects.
 
-SWEP.ShellModel				= "models/weapons/arccw/uc_shells/9x19.mdl"
-SWEP.ShellCorrectAng		= Angle(0, 180, 0)
-SWEP.ShellScale				= 1
+SWEP.ShellModel				= "models/shared/shells/9mm/9mm_casing.mdl"
+SWEP.ShellCorrectAng		= Angle(0, 0, 0)
+SWEP.ShellScale				= 1.5
 SWEP.ShellPhysBox			= Vector(0.5, 0.5, 2)
 
 SWEP.CamQCA					= 3

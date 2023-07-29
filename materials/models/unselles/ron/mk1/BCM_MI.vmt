@@ -1,5 +1,3 @@
-//if you don't know what a parameter does, visit:
-//https://developer.valvesoftware.com/wiki/$phong
 "VertexLitGeneric"
 {
     "$basetexture" "models\unselles\ron\MK1\RON_MK1_rgb"
@@ -14,25 +12,23 @@
     "$phongfresnelranges" "[1 0.5 0]"
     "$phongalbedotint" "0"
 
-    //rimlight doesn't properly show in hlmv, make sure you're changing these values in game
     "$rimlight" "1"
     "$rimlightexponent" "100"
     "$rimmask" "1"
-    "$rimlightboost" "1"
+    "$rimlightboost" "0.2"
 
     "$normalmapalphaenvmapmask" "1"
     "$envmapfresnel" "1"
     "$envmap" "env_cubemap"
-    "$envmaptint" "[0.2 0.2 0.2]"
+    "$envmaptint" "[0.06 0.06 0.02]"
 
-    //remove this if viewing outside of MWB
     "Proxies"
     {
         "MwEnvMapTint"
         {
             "specularity" "0.5"             //0.25, 0.5, 0.75, 1
             "min" "0"
-            "max" "0.2"                       //change this if too bright in game
+            "max" "0.2"                       
         }
     }
 }
