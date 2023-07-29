@@ -353,171 +353,22 @@ SWEP.Animations = {
 			},										t = 0.03},
 		},
 	},
+	["fire_iron"] = {
+	Source = "fire_ads",
+	},
 	["fire_empty"] = {
 		Source				= "fire_empty",
-		Time				= 16 / 30,
+		Time				= 0.5,
 		ShellEjectAt				= 0.03,
 		EventTable = {
-			{s	= path .. "mech_last.ogg",			t = 0},
+			{s	= path .. "mech_last.ogg",			t = 0.03},
 		},
 	},
-
-	["fix"] = {
-		Source				= "fix",
-		Time				= 45 / 30,
-		IKTimeLine = {
-			{
-				t				= 0,
-				lhik				= 1,
-				rhik				= 1
-			},
-			{
-				t				= 0.4,
-				lhik				= 0,
-				rhik				= 0
-			},
-			{
-				t				= 0.6,
-				lhik				= 0,
-				rhik				= 0
-			},
-			{
-				t				= 1,
-				lhik				= 1,
-				rhik				= 1
-			},
-		},
-		EventTable = {
-			{s	= path .. "chback.ogg",				t = 0.15},
-			{s	= common .. "cloth_4.ogg", 			t = 0.5},
-			{s	= path .. "chamber.ogg", 			t = 0.55},
-		},
+	["firemode_1"] = {
+		Source = "firemodeup",
 	},
-	["fix_empty"] = {
-		Source				= "fix_empty",
-		Time				= 45 / 30,
-		IKTimeLine = {
-			{
-				t				= 0,
-				lhik				= 1,
-				rhik				= 1
-			},
-			{
-				t				= 0.4,
-				lhik				= 0,
-				rhik				= 0
-			},
-			{
-				t				= 0.6,
-				lhik				= 0,
-				rhik				= 0
-			},
-			{
-				t				= 1,
-				lhik				= 1,
-				rhik				= 1
-			},
-		},
-		EventTable = {
-			{s	= path .. "chback.ogg",				t = 0.15},
-			{s	= common .. "cloth_4.ogg", 			t = 0.5},
-			{s	= path .. "chamber.ogg", 			t = 0.55},
-		},
-	},
-	["fix_100"] = {
-		Source				= "fix_100",
-		Time				= 50 / 30,
-		IKTimeLine = {
-			{
-				t				= 0,
-				lhik				= 1,
-				rhik				= 1
-			},
-			{
-				t				= 0.4,
-				lhik				= 0,
-				rhik				= 0
-			},
-			{
-				t				= 0.6,
-				lhik				= 0,
-				rhik				= 0
-			},
-			{
-				t				= 1,
-				lhik				= 1,
-				rhik				= 1
-			},
-		},
-		EventTable = {
-			{s	= path .. "chback.ogg",				t = 0.15},
-			{s	= common .. "cloth_4.ogg", 			t = 0.5},
-			{s	= path .. "chamber.ogg", 			t = 0.55},
-		},
-	},
-	["fix_empty_100"] = {
-		Source				= "fix_empty_100",
-		Time				= 50 / 30,
-		IKTimeLine = {
-			{
-				t				= 0,
-				lhik				= 1,
-				rhik				= 1
-			},
-			{
-				t				= 0.4,
-				lhik				= 0,
-				rhik				= 0
-			},
-			{
-				t				= 0.6,
-				lhik				= 0,
-				rhik				= 0
-			},
-			{
-				t				= 1,
-				lhik				= 1,
-				rhik				= 1
-			},
-		},
-		EventTable = {
-			{s	= path .. "chback.ogg",				t = 0.15},
-			{s	= common .. "cloth_4.ogg", 			t = 0.5},
-			{s	= path .. "chamber.ogg", 			t = 0.55},
-		},
-	},
-
-	["cycle"] = {
-		Source				= "fix",
-		Time				= 36 / 30 * 0.7,
-		ShellEjectAt				= 0.3,
-		IKTimeLine = {
-			{
-				t				= 0,
-				lhik				= 1,
-				rhik				= 1
-			},
-			{
-				t				= 0.4,
-				lhik				= 0,
-				rhik				= 0
-			},
-			{
-				t				= 0.6,
-				lhik				= 0,
-				rhik				= 0
-			},
-			{
-				t				= 1,
-				lhik				= 1,
-				rhik				= 1
-			},
-		},
-		EventTable = {
-			{s	= path .. "chback.ogg",				t = 0.05},
-			{s	= common .. "cloth_4.ogg", 			t = 0.2},
-			{s	= path .. "chamber.ogg", 			t = 0.3},
-		},
+	["firemode_2"] = {
+		Source = "firemodedown",
 	},
 
 	-- Reloads --
