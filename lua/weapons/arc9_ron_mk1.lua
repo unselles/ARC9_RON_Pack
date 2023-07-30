@@ -518,12 +518,22 @@ SWEP.Attachments = {
 		PrintName						= "Muzzle",
 		DefaultAttName					= "Default",
 		Category						= "ron_socom338",
-		Bone							= "tag_muzzle",
-		Pos								= Vector(0, 0, 0.0),
+		Bone							= "sfmb_socket",
+		Pos								= Vector(0, 3.5, 0),
+		Ang								= Angle(0, 0, 0),
+		Icon_Offset						= Vector(0, 0, 0)
+	},
+	{
+		PrintName						= "Optic",
+		DefaultAttName					= "Default",
+		Category						= "ron_holosight",
+		Bone							= "tag_sight",
+		Pos								= Vector(0, -3.5, 0),
 		Ang								= Angle(0, 0, 0),
 		Icon_Offset						= Vector(0, 0, 0)
 	},
 }
+
 
 
 

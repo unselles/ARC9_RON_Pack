@@ -1,0 +1,21 @@
+"VertexlitGeneric"
+{
+	"$basetexture" "effects/glass_b"
+	
+	"$bumpmap" "effects/glass_n"
+	"$translucent" "1"
+	
+	 "$color2" "[0 0 0]"
+
+	"$phong" "1"
+	"$phongboost" "5"
+	"$phongalbedotint" "1"
+	"$phongexponent" "50"
+	"$phongfresnelranges" "[0.22 0.856 20]"
+
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[0.2 0.2 0.2]"
+	"$envmapfresnel" "0.1"
+	"$normalmapalphaenvmapmask" "0"
+	"$basemapalphaenvmapmask" "1"
+}
