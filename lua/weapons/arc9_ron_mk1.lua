@@ -33,7 +33,7 @@ SWEP.WorldModel				= "models/weapons/arc9/mk1.mdl"
 SWEP.ViewModelFOVBase		= 70
 
 SWEP.Slot					= 2
-SWEP.Crosshair				= true
+SWEP.Crosshair				= false
 
 SWEP.MirrorVMWM				= true
 SWEP.WorldModelOffset = {
@@ -76,13 +76,10 @@ SWEP.DropMagazineTime				= 1
 -------------------------- FIREMODES
 
 SWEP.RPM				= 700
+-- SWEP.Firemodes = { { Mode = -1 }, { Mode = 1 } } -- auto, semi
 SWEP.Firemodes = {
-	{
-		Mode				= -1
-	},
-	{
-		Mode				= 1
-	}
+    { Mode = -1, PoseParam = 2 },
+    { Mode = 1, PoseParam = 1 }
 }
 
 -------------------------- MELEE
@@ -309,7 +306,7 @@ SWEP.Animations = {
 	},
 	["draw"] = {
 		Source				= "draw",
-		Time				= 30 / 30,
+		Time				= 30 / 22,
 		EventTable = {
 			{s	= common .. "Universal_Long_Draw_02.ogg",			t = 0.35},
 			{s	= common .. "shoulder.ogg",			t = 0.15},
@@ -365,12 +362,12 @@ SWEP.Animations = {
 			{s	= path .. "mech_last.ogg",			t = 0.03},
 		},
 	},
-	["firemode_1"] = {
-		Source = "firemodeup",
-	},
-	["firemode_2"] = {
-		Source = "firemodedown",
-	},
+    ["firemode_1"] = {
+        Source = "firemodedown",
+    },
+    ["firemode_2"] = {
+        Source = "firemodeup",
+    },
 
 	-- Reloads --
 
@@ -493,7 +490,21 @@ SWEP.Animations = {
 
 
 
+
 -------------------------- ATTACHMENTS
+
+SWEP.Hook_ModifyBodygroups = function(wep, data)
+    local eles = data.elements
+    local mdl = data.model
+    
+    if eles["ron_mk1_fs"] then
+        if wep:GetValue("FoldSights") then
+            mdl:SetBodygroup(3, 2)
+        else
+            mdl:SetBodygroup(3, 1)
+        end
+    end
+end
 
 SWEP.Attachments = {
 	{
@@ -529,9 +540,18 @@ SWEP.Attachments = {
 		Category						= "ron_holosight",
 		Bone							= "tag_sight",
 		Pos								= Vector(0, -3.5, 0),
-		Ang								= Angle(0, 0, 0),
+		Ang								= Angle(0, -90, 0),
 		Icon_Offset						= Vector(0, 0, 0)
 	},
+	{
+        PrintName 						= "Folding Sights",
+        Category 						= "ron_mk1_iron",
+        Bone 							= "tag_sight",
+        Installed 						= "ron_mk1_fs",
+        Pos 							= Vector(0, 0, 0),
+        Ang 							= Angle(0, 0, 0),
+        Icon_Offset 					= Vector(0, 0, 0),
+    },
 }
 
 

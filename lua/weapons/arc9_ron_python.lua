@@ -33,7 +33,7 @@ SWEP.WorldModel				= "models/weapons/arc9/python.mdl"
 SWEP.ViewModelFOVBase		= 70
 
 SWEP.Slot					= 1
-SWEP.Crosshair				= true
+SWEP.Crosshair				= false
 
 SWEP.MirrorVMWM				= true
 SWEP.WorldModelOffset = {
@@ -248,7 +248,7 @@ local common				= ")^weapons/arc9_ron_shared/"
 SWEP.FirstShootSound			= path .. "Python_Fire_01.ogg"
 SWEP.ShootSound					= path .. "Python_Fire_02.ogg"
 SWEP.DistantShootSound			= path .. ""
-SWEP.DryFireSound				= path .. "weap_mp5_dryfire_03.ogg"
+SWEP.DryFireSound				= path .. "Python_DryFire.ogg"
 
 SWEP.ShootSound = {
     path .. "Python_Fire_01.ogg",
@@ -280,15 +280,6 @@ local rottle = {common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "clo
 SWEP.ReloadInSights				= false -- This weapon can aim down sights while reloading.
 
 SWEP.Animations = {
-	["ready"] = {
-		Source				= "ready",
-		Time				= 3,
-		EventTable = {
-			{s	= path .. "p90_first_draw.ogg",			t = 0},
-			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
-			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 20},
-		},
-	},
 	["idle"] = {
 		Source				= "idle",
 		Time				= 1
@@ -299,7 +290,7 @@ SWEP.Animations = {
 	},
 	["draw"] = {
 		Source				= "draw",
-		Time				= 30 / 60,
+		Time				= 0.5,
 		EventTable = {
 			{s	= path .. "Python_Draw.ogg",			t = 0},
 			{s	= common .. "Universal_Long_Draw_01.ogg",			t = 0},
@@ -351,6 +342,7 @@ SWEP.Animations = {
 			{s	= path .. "mech_last.ogg",			t = 0},
 		},
 	},
+	["dryfire"] = { Source = "dryfire" },
 
 	["fix"] = {
 		Source				= "fix",

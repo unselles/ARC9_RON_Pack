@@ -33,7 +33,7 @@ SWEP.WorldModel				= "models/weapons/arc9/mp7.mdl"
 SWEP.ViewModelFOVBase		= 70
 
 SWEP.Slot					= 2
-SWEP.Crosshair				= true
+SWEP.Crosshair				= false
 
 SWEP.MirrorVMWM				= true
 SWEP.WorldModelOffset = {
@@ -661,6 +661,15 @@ SWEP.Attachments = {
 		Bone							= "laser_socket",
 		Pos								= Vector(0, 0, 0.0),
 		Ang								= Angle(0, 0, 0),
+		Icon_Offset						= Vector(0, 0, 0)
+	},
+	{
+		PrintName						= "Optic",
+		DefaultAttName					= "Default",
+		Category						= "ron_holosight",
+		Bone							= "tag_sight",
+		Pos								= Vector(0, -2.1, -0.22),
+		Ang								= Angle(0, -90, 0),
 		Icon_Offset						= Vector(0, 0, 0)
 	},
 }

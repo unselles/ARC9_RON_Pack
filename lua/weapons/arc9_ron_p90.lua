@@ -33,7 +33,7 @@ SWEP.WorldModel				= "models/weapons/arc9/p90.mdl"
 SWEP.ViewModelFOVBase		= 70
 
 SWEP.Slot					= 2
-SWEP.Crosshair				= true
+SWEP.Crosshair				= false
 
 SWEP.MirrorVMWM				= true
 SWEP.WorldModelOffset = {
@@ -662,6 +662,24 @@ SWEP.Attachments = {
 		Category						= "ron_peq",
 		Bone							= "laser_socket",
 		Pos								= Vector(0, 0, 0.0),
+		Ang								= Angle(0, 0, 0),
+		Icon_Offset						= Vector(0, 0, 0)
+	},
+	{
+		PrintName						= "Muzzle",
+		DefaultAttName					= "Default",
+		Category						= {"ron_harvester","ron_tundra"},
+		Bone							= "tag_muzzle",
+		Pos								= Vector(1.94, 0.1, 0.01),
+		Ang								= Angle(0, 86, 0),
+		Icon_Offset						= Vector(0, -3, 0)
+	},
+	{
+		PrintName						= "Optic",
+		DefaultAttName					= "Default",
+		Category						= "ron_holosight",
+		Bone							= "tag_sight",
+		Pos								= Vector(0, 0.3, -0.35),
 		Ang								= Angle(0, 0, 0),
 		Icon_Offset						= Vector(0, 0, 0)
 	},

@@ -33,7 +33,7 @@ SWEP.WorldModel				= "models/weapons/arc9/g19.mdl"
 SWEP.ViewModelFOVBase		= 70
 
 SWEP.Slot					= 1
-SWEP.Crosshair				= true
+SWEP.Crosshair				= false
 
 SWEP.MirrorVMWM				= true
 SWEP.WorldModelOffset = {
