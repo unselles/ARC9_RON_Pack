@@ -249,10 +249,10 @@ SWEP.ShootSound = {
     path .. "MK1-4.ogg"
 }
 SWEP.ShootSoundSilenced = {
-    path .. "p90_Fire_1_Suppressed.ogg",
-    path .. "p90_Fire_2_Suppressed.ogg",
-    path .. "p90_Fire_3_Suppressed.ogg",
-    path .. "p90_Fire_4_Suppressed.ogg"
+    path .. "MK1-1_Suppressed.ogg",
+    path .. "MK1-2_Suppressed.ogg",
+    path .. "MK1-3_Suppressed.ogg",
+    path .. "MK1-4_Suppressed.ogg"
 }
 
 SWEP.DryFireSingleAction = false
@@ -270,12 +270,12 @@ SWEP.DistantShootSoundIndoor = {
 }
 
 SWEP.DistantShootSoundSilenced = {
-    common .. "P90_Suppressed_Reflection_EXT_Base_01.ogg",
-    common .. "P90_Suppressed_Reflection_EXT_Base_02.ogg"
+    common .. "MK1_Ext_Reflection_Suppressed_Base_01.ogg",
+    common .. "MK1_Ext_Reflection_Suppressed_Base_02.ogg"
 }
 SWEP.DistantShootSoundSilencedIndoor = {
-    common .. "P90_Suppressed_Reflection_Int_Base_01.ogg",
-    common .. "P90_Suppressed_Reflection_Int_Base_02.ogg"
+    common .. "MK1_Reflection_int_Suppressed_Base_01.ogg",
+    common .. "MK1_Reflection_int_Suppressed_Base_02.ogg"
 }
 
 SWEP.FiremodeSound				= "weapons/arc9_ron_shared/SwitchToSemi.ogg"
@@ -478,7 +478,7 @@ SWEP.Animations = {
 	-- Inspect --
 	
 	["inspect_enter"] = {
-        Source = "enter_inspect",
+        Source = "inspect",
 		Time				= 1,
 		EventTable = {
 			{s	= path .. "p90_first_draw.ogg",			t = 0},
@@ -528,28 +528,30 @@ SWEP.Attachments = {
 	{
 		PrintName						= "Muzzle",
 		DefaultAttName					= "Default",
-		Category						= "ron_socom338",
+		Category						= {"ron_socom338","ron_sfmb","ron_brake_default"},
 		Bone							= "sfmb_socket",
-		Pos								= Vector(0, 3.5, 0),
+        Installed 						= "ron_brake_default",
+		Pos								= Vector(0, 3.75, 0),
 		Ang								= Angle(0, 0, 0),
-		Icon_Offset						= Vector(0, 0, 0)
+		Icon_Offset						= Vector(0, -3, 0)
 	},
 	{
 		PrintName						= "Optic",
 		DefaultAttName					= "Default",
-		Category						= "ron_holosight",
+		Category						= {"ron_holosight","ron_reflex"},
 		Bone							= "tag_sight",
-		Pos								= Vector(0, -3.5, 0),
+		Pos								= Vector(0, -3.5, -0.12),
 		Ang								= Angle(0, -90, 0),
 		Icon_Offset						= Vector(0, 0, 0)
 	},
 	{
         PrintName 						= "Folding Sights",
-        Category 						= "ron_mk1_iron",
+		DefaultAttName					= "Default",
+        Category 						= {"ron_default_fs_up","ron_default_fs_down"},
         Bone 							= "tag_sight",
-        Installed 						= "ron_mk1_fs",
-        Pos 							= Vector(0, 0, 0),
-        Ang 							= Angle(0, 0, 0),
+        Installed 						= "ron_default_fs_up",
+        Pos 							= Vector(0, -0.5, -0.15),
+        Ang 							= Angle(0, -90, 0),
         Icon_Offset 					= Vector(0, 0, 0),
     },
 }

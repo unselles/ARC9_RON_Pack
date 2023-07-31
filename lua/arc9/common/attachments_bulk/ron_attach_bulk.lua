@@ -108,9 +108,9 @@ ATT.Silencer = true
 ATT.MuzzleDevice = true
 ATT.MuzzleDevice_Priority = 2
 
-ATT.RecoilMult = 0.75
-ATT.VisualRecoilMult = 0.75
-ATT.SpreadMult = 0.75
+ATT.RecoilMult = 0.85
+ATT.VisualRecoilMult = 0.85
+ATT.SpreadMult = 0.85
 
 ATT.Category = {"ron_socom338"}
 
@@ -135,9 +135,9 @@ ATT.Silencer = true
 ATT.MuzzleDevice = true
 ATT.MuzzleDevice_Priority = 2
 
-ATT.RecoilMult = 0.75
-ATT.VisualRecoilMult = 0.75
-ATT.SpreadMult = 0.75
+ATT.RecoilMult = 0.85
+ATT.VisualRecoilMult = 0.85
+ATT.SpreadMult = 0.85
 
 ATT.Category = {"ron_harvester"}
 
@@ -239,7 +239,7 @@ local ATT = {}
 
 ATT.PrintName = "TUNDRA"
 ATT.CompactName = "TUNDRA Suppressor"
-ATT.Icon = Material("entities/attach/sk_suppressor_harvester_512.png", "mips smooth")
+ATT.Icon = Material("entities/attach/sk_suppressor_tundra_512.png", "mips smooth")
 ATT.Description = "TUNDRA Suppressor"
 ATT.SortOrder = 0
 
@@ -252,10 +252,140 @@ ATT.Silencer = true
 ATT.MuzzleDevice = true
 ATT.MuzzleDevice_Priority = 2
 
-ATT.RecoilMult = 0.75
-ATT.VisualRecoilMult = 0.75
-ATT.SpreadMult = 0.75
+ATT.RecoilMult = 0.85
+ATT.VisualRecoilMult = 0.85
+ATT.SpreadMult = 0.85
 
 ATT.Category = {"ron_tundra"}
 
 ARC9.LoadAttachment(ATT, "ron_supp_tundra")
+
+----------------------------------------
+
+local ATT = {}
+
+ATT.PrintName = "MicroT2 Reflex"
+ATT.CompactName = "MicroT2"
+ATT.Icon = Material("entities/attach/SK_MicroT2_512.png", "mips smooth")
+ATT.Description = "MicroT2 reflex sight"
+ATT.SortOrder = 1
+
+
+ATT.Model = "models/shared/attachments/optic_microt2_tall.mdl"
+
+ATT.Category = {"ron_reflex"}
+
+
+
+ATT.FoldSights = true
+
+ATT.Sights = {
+    {
+        Pos = Vector(0, 10, -2),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.1,
+        ViewModelFOV = 75
+    }
+}
+
+ATT.HoloSight = true
+ATT.HoloSightReticle = Material("vgui/shared/reticles/Optic_Dot_Single.png", "mips smooth")
+ATT.HoloSightReticle:SetInt("$additive", 1)
+ATT.HoloSightSize = 465
+ATT.HoloSightColorable = false
+
+
+ATT.ModelOffset = Vector(0, 0, 0)
+
+
+ARC9.LoadAttachment(ATT, "ron_optic_microt2_tall")
+
+----------------------------------------
+
+ATT = {}
+
+ATT.PrintName = "SFMB"
+ATT.CompactName = "SFMB Brake"
+ATT.Icon = Material("entities/attach/Muzzle_sfmb_brake_512.png", "mips smooth")
+ATT.Description = "SFMB Brake"
+ATT.SortOrder = 0
+
+ATT.Model = "models/shared/attachments/brake_sfmb.mdl"
+ATT.NoFlash = false
+ATT.BarrelLengthAdd = 2
+ATT.Silencer = false
+
+ATT.MuzzleDevice = true
+ATT.MuzzleDevice_Priority = 2
+
+ATT.RecoilMult = 0.75
+ATT.VisualRecoilMult = 0.75
+ATT.SpreadMult = 0.75
+
+ATT.Category = {"ron_sfmb"}
+
+ARC9.LoadAttachment(ATT, "ron_brake_sfmb")
+
+----------------------------------------
+
+ATT = {}
+
+ATT.PrintName = "Default AR Brake"
+ATT.CompactName = "Default Brake"
+ATT.Icon = Material("", "mips smooth")
+ATT.Description = "Default AR Brake"
+ATT.SortOrder = 0
+
+ATT.Model = "models/shared/attachments/brake_ar.mdl"
+ATT.NoFlash = false
+ATT.BarrelLengthAdd = 2
+ATT.Silencer = false
+
+ATT.MuzzleDevice = true
+ATT.MuzzleDevice_Priority = 2
+
+ATT.RecoilMult = 0.95
+ATT.VisualRecoilMult = 0.95
+ATT.SpreadMult = 0.95
+
+ATT.Category = {"ron_brake_default"}
+
+ARC9.LoadAttachment(ATT, "ron_brake_default")
+
+----------------------------------------
+
+ATT = {}
+
+ATT.PrintName = "Default folding sights up"
+ATT.CompactName = "Default FS Up"
+ATT.Icon = Material("", "mips smooth")
+ATT.Description = "MK1 folding sights up"
+
+ATT.Model = "models/shared/attachments/sights_flip_up.mdl"
+
+ATT.SortOrder = 2
+
+ATT.Category = {"ron_default_fs_up"}
+
+
+
+ARC9.LoadAttachment(ATT, "ron_default_fs_up")
+
+----------------------------------------
+
+ATT = {}
+
+ATT.PrintName = "Default folding sights down"
+ATT.CompactName = "Default FS Down"
+ATT.Icon = Material("", "mips smooth")
+ATT.Description = "MK1 folding sights down"
+
+ATT.Model = "models/shared/attachments/sights_flip_down.mdl"
+
+ATT.SortOrder = 1
+
+ATT.Category = {"ron_default_fs_down"}
+
+
+
+ARC9.LoadAttachment(ATT, "ron_default_fs_down")

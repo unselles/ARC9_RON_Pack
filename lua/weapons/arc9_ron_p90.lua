@@ -680,7 +680,7 @@ SWEP.Attachments = {
 		Category						= "ron_holosight",
 		Bone							= "tag_sight",
 		Pos								= Vector(0, 0.3, -0.35),
-		Ang								= Angle(0, 0, 0),
+		Ang								= Angle(0, -90, 0),
 		Icon_Offset						= Vector(0, 0, 0)
 	},
 }

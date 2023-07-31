@@ -4,7 +4,7 @@
     "$bumpmap" "models\unselles\ron\shared\attachments\supp_tundra\MI_Attachment_Tundra_n"
     "$phongexponenttexture" "models\unselles\ron\shared\attachments\supp_tundra\MI_Attachment_Tundra_e"
 
-    "$color2" "[0 0 0]"
+    "$color2" "[0.8 0.8 0.8]"
     "$blendtintbybasealpha" "1"
 
     "$phong" "1"
