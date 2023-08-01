@@ -6,7 +6,7 @@
     "$bumpmap" "models\unselles\ron\mk1\mag_n"
     "$phongexponenttexture" "models\unselles\ron\mk1\mag_e"
 
-    "$color2" "[0 0 0]"
+    "$color2" "[0.6 0.6 0.6]"
     "$blendtintbybasealpha" "1"
 
     "$phong" "1"

@@ -287,15 +287,6 @@ local rottle = {common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "clo
 SWEP.ReloadInSights				= false -- This weapon can aim down sights while reloading.
 
 SWEP.Animations = {
-	["ready"] = {
-		Source				= "ready",
-		Time				= 3.9,
-		EventTable = {
-			{s	= path .. "p90_first_draw.ogg",			t = 0},
-			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
-			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 20},
-		},
-	},
 	["idle"] = {
 		Source				= "idle",
 		Time				= 1
@@ -324,7 +315,7 @@ SWEP.Animations = {
 	},
 	["holster"] = {
 		Source				= "holster",
-		Time				= 20 / 30,
+		Time				= 30 / 22,
 		EventTable = {
 			{s	= ratel,							t = 0},
 			{s	= common .. "Universal_Long_Holster_02.ogg",			t = 0},
@@ -332,7 +323,7 @@ SWEP.Animations = {
 	},
 	["holster_empty"] = {
 		Source				= "holster_empty",
-		Time				= 20 / 30,
+		Time				= 30 / 22,
 		EventTable = {
 			{s	= ratel,							t = 0},
 			{s	= common .. "cloth_6.ogg",			t = 0.2},
@@ -477,11 +468,11 @@ SWEP.Animations = {
 
 	-- Inspect --
 	
-	["inspect_enter"] = {
-        Source = "inspect",
-		Time				= 1,
+	["inspect"] = {
+        Source = "inspect_enter",
+		Time				= 3,
 		EventTable = {
-			{s	= path .. "p90_first_draw.ogg",			t = 0},
+			{s	= path .. "M4_MagCheck.ogg",			t = 0},
 			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
 			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 0},
 		},
