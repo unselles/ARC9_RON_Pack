@@ -389,3 +389,22 @@ ATT.Category = {"ron_default_fs_down"}
 
 
 ARC9.LoadAttachment(ATT, "ron_default_fs_down")
+
+----------------------------------------
+
+ATT = {}
+
+ATT.PrintName = "MK18 Back Sight"
+ATT.CompactName = "MK18 BK Sight"
+ATT.Icon = Material("", "mips smooth")
+ATT.Description = "MK18 back sight"
+
+ATT.Model = "models/shared/attachments/sight_mk18.mdl"
+
+ATT.SortOrder = 1
+
+ATT.Category = {"ron_mk18_sight"}
+
+
+
+ARC9.LoadAttachment(ATT, "ron_mk18_sight")
