@@ -46,8 +46,8 @@ SWEP.DefaultBodygroups		= "0000000000000000000000"
 
 -------------------------- DAMAGE PROFILE
 
-SWEP.DamageMax				= 20 -- Damage done at point blank range
-SWEP.DamageMin				= 10 -- Damage done at maximum range
+SWEP.DamageMax				= 10 -- Damage done at point blank range
+SWEP.DamageMin				= 5 -- Damage done at maximum range
 
 SWEP.DamageRand				= 0 -- Damage varies randomly per shot by this fraction. 0.1				= +- 10% damage per shot.
 
@@ -161,7 +161,7 @@ SWEP.SpreadMultCrouch				= 0.5
 -------------------------- HANDLING
 
 SWEP.FreeAimRadius			= 10 / 1.25 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway					= 0.1 + 1 -- How much the gun sways.
+SWEP.Sway					= 0.1 + 0.1 -- How much the gun sways.
 
 SWEP.SwayMultMidAir			= 1.8
 SWEP.SwayMultMove			= 1.05
@@ -190,15 +190,16 @@ SWEP.TracerColor			= Color(255, 225, 200) -- Color of tracers. Only works if tra
 -------------------------- POSITIONS
 
 SWEP.IronSights = {
-	Pos			= Vector(-6.45, -15, 1.25),
+	Pos			= Vector(-6.48, -10, 1.3),
 	Ang			= Angle(0, 0, 0),
 	Midpoint = { -- Where the gun should be at the middle of it's irons
-		Pos			= Vector(0, 15, -4),
-		Ang			= Angle(0, 0, -45),
+		Pos			= Vector(0, 0, 0),
+		Ang			= Angle(0, 0, 0),
 	},
-	ViewModelFOV = 50,
+	ViewModelFOV = 65,
 	Magnification	= 1.1,
 }
+
 
 SWEP.SprintPos				= Vector(-1, -12, -2)
 SWEP.SprintAng				= Angle(15.5, 2, -7)
@@ -677,7 +678,7 @@ SWEP.Attachments = {
 	{
 		PrintName						= "Optic",
 		DefaultAttName					= "Default",
-		Category						= "ron_holosight",
+		Category						= {"ron_holosight","ron_reflex"},
 		Bone							= "tag_sight",
 		Pos								= Vector(0, 0.3, -0.35),
 		Ang								= Angle(0, -90, 0),

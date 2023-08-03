@@ -524,7 +524,7 @@ SWEP.Attachments = {
 		DefaultAttName					= "Default",
 		Category						= {"ron_holosight","ron_reflex"},
 		Bone							= "tag_sight",
-		Pos								= Vector(0, 2, -0.78),
+		Pos								= Vector(0, 2, -0.74),
 		Ang								= Angle(0, -90, 0),
 		Icon_Offset						= Vector(0, 0, 0)
 	},
@@ -536,6 +536,16 @@ SWEP.Attachments = {
         Installed 						= "ron_mk18_sight",
         Pos 							= Vector(0, 0, -0.74),
         Ang 							= Angle(0, -90, 0),
+        Icon_Offset 					= Vector(0, 0, 0),
+    },
+	{
+        PrintName 						= "Uderbarrel",
+		DefaultAttName					= "Default",
+        Category 						= "ron_grip",
+        Bone 							= "foregrip_socket",
+//        Installed 						= "",
+        Pos 							= Vector(0, 0, -0.0),
+        Ang 							= Angle(0, 180, 0),
         Icon_Offset 					= Vector(0, 0, 0),
     },
 }

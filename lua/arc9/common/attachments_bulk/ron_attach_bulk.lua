@@ -193,7 +193,7 @@ ATT.Category = {"ron_holosight"}
 
 
 
-ATT.FoldSights = true
+//ATT.FoldSights = true
 
 ATT.Sights = {
     {
@@ -211,7 +211,7 @@ ATT.HoloSightSize = 465
 ATT.HoloSightColorable = false
 
 
-ATT.ModelOffset = Vector(0, 0, 0)
+//ATT.ModelOffset = Vector(0, 0, 0)
 
 
 ARC9.LoadAttachment(ATT, "ron_optic_exps3")
@@ -260,7 +260,7 @@ ATT.Category = {"ron_tundra"}
 
 ARC9.LoadAttachment(ATT, "ron_supp_tundra")
 
-----------------------------------------
+//---------------------------------------- Optic MicroT2
 
 local ATT = {}
 
@@ -277,16 +277,18 @@ ATT.Category = {"ron_reflex"}
 
 
 
-ATT.FoldSights = true
+//ATT.FoldSights = true
 
 ATT.Sights = {
     {
-        Pos = Vector(0, 10, -2),
+        Pos = Vector(0, 10, -1.6),
         Ang = Angle(0, 0, 0),
         Magnification = 1.1,
         ViewModelFOV = 75
     }
 }
+
+ATT.ModelOffset = Vector(0, 0, 0.02)
 
 ATT.HoloSight = true
 ATT.HoloSightReticle = Material("vgui/shared/reticles/Optic_Dot_Single.png", "mips smooth")
@@ -295,12 +297,150 @@ ATT.HoloSightSize = 465
 ATT.HoloSightColorable = false
 
 
-ATT.ModelOffset = Vector(0, 0, 0)
+ARC9.LoadAttachment(ATT, "ron_optic_microt2")
+
+//---------------------------------------- Optic SRS
 
 
-ARC9.LoadAttachment(ATT, "ron_optic_microt2_tall")
+local ATT = {}
 
-----------------------------------------
+ATT.PrintName = "SRS"
+ATT.CompactName = "SRS Reflex"
+ATT.Icon = Material("entities/attach/Optic_SRS_512.png", "mips smooth")
+ATT.Description = "SRS reflex sight"
+ATT.SortOrder = 1
+
+
+ATT.Model = "models/shared/attachments/optic_srs.mdl"
+
+ATT.Category = {"ron_reflex"}
+
+
+
+ATT.FoldSights = true
+
+ATT.Sights = {
+    {
+        Pos = Vector(0, 10, -1.6),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.1,
+        ViewModelFOV = 75
+    }
+}
+
+ATT.ModelOffset = Vector(0, 0, 0.32)
+
+ATT.HoloSight = true
+ATT.HoloSightReticle = Material("vgui/shared/reticles/Optic_Dot_Single.png", "mips smooth")
+ATT.HoloSightReticle:SetInt("$additive", 1)
+ATT.HoloSightSize = 465
+ATT.HoloSightColorable = false
+
+
+
+ARC9.LoadAttachment(ATT, "ron_optic_srs")
+
+//---------------------------------------- Optic M5B
+
+local ATT = {}
+
+ATT.PrintName = "M5B"
+ATT.CompactName = "M5B Optic"
+ATT.Icon = Material("entities/attach/Optic_M5B_512.png", "mips smooth")
+ATT.Description = "M5B reflex sight"
+ATT.SortOrder = 1
+
+
+ATT.Model = "models/shared/attachments/optic_m5b.mdl"
+
+ATT.Category = {"ron_reflex"}
+
+
+
+ATT.FoldSights = true
+
+ATT.Sights = {
+    {
+        Pos = Vector(0.1, 10, -2),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.1,
+        ViewModelFOV = 75
+    }
+}
+
+ATT.ModelOffset = Vector(0, 0.1, 0.05)
+
+ATT.HoloSight = true
+ATT.HoloSightReticle = Material("vgui/shared/reticles/Optic_Dot_Single.png", "mips smooth")
+ATT.HoloSightReticle:SetInt("$additive", 1)
+ATT.HoloSightSize = 465
+ATT.HoloSightColorable = false
+
+
+
+
+ARC9.LoadAttachment(ATT, "ron_optic_m5b")
+
+----------------------------------------// Optic SDR
+
+ATT = {}
+
+ATT.PrintName = "SDR 1x-4x scope"
+ATT.CompactName = "SpecterDR"
+ATT.Icon = Material("", "mips smooth")
+ATT.Description = "SDR 1x-4x scope"
+ATT.SortOrder = 2
+
+ATT.Model = "models/shared/attachments/optic_sdr.mdl"
+
+ATT.Category = "ron_holosight"
+
+ATT.Sights = {
+    {
+        Pos = Vector(0, 8.0, -2),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.15,
+        ViewModelFOV = 36,
+        RTScopeFOV = 36/4,
+    },
+    {
+        Pos = Vector(0, 8.0, -2),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.15,
+        ViewModelFOV = 36,
+        RTScopeFOV = 36/1,
+    },
+    {
+        Pos = Vector(0, 8, -3.5),
+        Ang = Angle(0, 0, 0),
+        ShadowPos = Vector(0,0,3),
+        Disassociate = true
+    },
+}
+
+ATT.DrawFunc = function(swep, model, wm) 
+    if !wm then
+        model:SetBodygroup(1, swep:GetMultiSight()-1)
+    end
+end
+
+ATT.RTScope = true
+ATT.RTScopeSubmatIndex = 4
+ATT.RTScopeFOV = 12
+ATT.RTScopeReticle = Material("vgui/shared/reticles/T_ATACR_Dot.png", "mips smooth")
+ATT.RTScopeReticleScale = 1.04
+ATT.RTScopeColorable = true
+ATT.RTScopeShadowIntensity = 10
+ATT.RTScopeBlackBox = true 
+ATT.RTScopeBlackBoxShadow = true 
+
+ATT.ScopeScreenRatio = 0.66
+
+
+
+ARC9.LoadAttachment(ATT, "ron_optic_sdr")
+
+----------------------------------------// SFMB Brake
 
 ATT = {}
 
@@ -352,7 +492,7 @@ ATT.Category = {"ron_brake_default"}
 
 ARC9.LoadAttachment(ATT, "ron_brake_default")
 
-----------------------------------------
+//---------------------------------------- DF Fold Sights Up
 
 ATT = {}
 
@@ -371,7 +511,7 @@ ATT.Category = {"ron_default_fs_up"}
 
 ARC9.LoadAttachment(ATT, "ron_default_fs_up")
 
-----------------------------------------
+//---------------------------------------- DF Fold Sights Down
 
 ATT = {}
 
@@ -390,7 +530,7 @@ ATT.Category = {"ron_default_fs_down"}
 
 ARC9.LoadAttachment(ATT, "ron_default_fs_down")
 
-----------------------------------------
+//---------------------------------------- MK18 Back Sight
 
 ATT = {}
 
@@ -408,3 +548,46 @@ ATT.Category = {"ron_mk18_sight"}
 
 
 ARC9.LoadAttachment(ATT, "ron_mk18_sight")
+
+//---------------------------------------- Grip Combat
+
+ATT = {}
+
+ATT.PrintName = "Combat Grip"
+ATT.CompactName = "Combat Grip"
+ATT.Description = "Combat grip for better recoil control"
+ATT.Icon = Material("entities/attach/sm_mod3_512.png", "mips smooth")
+
+ATT.Model = "models/shared/attachments/grip_combat.mdl"
+
+ATT.LHIK_Priority = 1
+ATT.LHIK = false
+
+ATT.RecoilMult = 0.65
+ATT.VisualRecoilMult = 0.65
+
+ATT.SortOrder = 0
+ATT.Category = "ron_grip"
+
+
+ARC9.LoadAttachment(ATT, "ron_grip_combat")
+
+//---------------------------------------- Grip Angled
+
+ATT = {}
+
+ATT.PrintName = "Angled Grip"
+ATT.CompactName = "Angled Grip"
+ATT.Description = "AFG Angled Grip"
+ATT.Icon = Material("entities/attach/Foregrip_AFG_512.png", "mips smooth")
+
+ATT.Model = "models/shared/attachments/grip_angled.mdl"
+
+ATT.RecoilMult = 0.75
+ATT.VisualRecoilMult = 0.75
+
+ATT.SortOrder = 0
+ATT.Category = "ron_grip"
+
+
+ARC9.LoadAttachment(ATT, "ron_grip_angled")

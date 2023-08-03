@@ -161,7 +161,7 @@ SWEP.SpreadMultCrouch				= 0.5
 -------------------------- HANDLING
 
 SWEP.FreeAimRadius			= 10 / 1.25 -- In degrees, how much this gun can free aim in hip fire.
-SWEP.Sway					= 0.1 + 1 -- How much the gun sways.
+SWEP.Sway					= 0.1 + 0.1 -- How much the gun sways.
 
 SWEP.SwayMultMidAir			= 1.8
 SWEP.SwayMultMove			= 1.05
@@ -666,11 +666,21 @@ SWEP.Attachments = {
 	{
 		PrintName						= "Optic",
 		DefaultAttName					= "Default",
-		Category						= "ron_holosight",
+		Category						= {"ron_holosight","ron_reflex"},
 		Bone							= "tag_sight",
 		Pos								= Vector(0, -2.1, -0.22),
 		Ang								= Angle(0, -90, 0),
 		Icon_Offset						= Vector(0, 0, 0)
+	},
+	{
+		PrintName 						= "Uderbarrel",
+		DefaultAttName					= "Default",
+		Category 						= "ron_grip",
+		Bone 							= "foregrip_socket",
+	//  Installed 						= "",
+		Pos 							= Vector(0, 0, -0.0),
+		Ang 							= Angle(0, 180, 0),
+		Icon_Offset 					= Vector(0, 0, 0),
 	},
 }
 
