@@ -75,7 +75,7 @@ SWEP.DropMagazineTime				= 1
 
 -------------------------- FIREMODES
 
-SWEP.RPM				= 1500
+SWEP.RPM				= 1300
 -- SWEP.Firemodes = { { Mode = -1 }, { Mode = 1 } } -- auto, semi
 SWEP.Firemodes = {
     { Mode = -1, PoseParam = 2 },
