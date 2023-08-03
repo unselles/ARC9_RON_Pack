@@ -387,28 +387,28 @@ ATT = {}
 
 ATT.PrintName = "SDR 1x-4x scope"
 ATT.CompactName = "SpecterDR"
-ATT.Icon = Material("", "mips smooth")
+ATT.Icon = Material("entities/attach/SK_Optic_SpecterDR_512.png", "mips smooth")
 ATT.Description = "SDR 1x-4x scope"
 ATT.SortOrder = 2
 
 ATT.Model = "models/shared/attachments/optic_sdr.mdl"
 
-ATT.Category = "ron_holosight"
+ATT.Category = "ron_scope"
 
 ATT.Sights = {
     {
         Pos = Vector(0, 8.0, -2),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.15,
-        ViewModelFOV = 36,
-        RTScopeFOV = 36/4,
+        Magnification = 1,
+        ViewModelFOV = 70,
+        RTScopeFOV = 4/1,
     },
     {
         Pos = Vector(0, 8.0, -2),
         Ang = Angle(0, 0, 0),
-        Magnification = 1.15,
-        ViewModelFOV = 36,
-        RTScopeFOV = 36/1,
+        Magnification = 1,
+        ViewModelFOV = 70,
+        RTScopeFOV = 1/1,
     },
     {
         Pos = Vector(0, 8, -3.5),
@@ -424,21 +424,112 @@ ATT.DrawFunc = function(swep, model, wm)
     end
 end
 
+//ATT.RTScope = true
+//ATT.RTScopeSubmatIndex = 4
+//ATT.RTScopeFOV = 12
+//ATT.RTScopeReticle = Material("vgui/shared/reticles/T_ATACR_Dot.png", "mips smooth")
+//ATT.RTScopeReticleScale = 1.04
+//ATT.RTScopeColorable = true
+//ATT.RTScopeShadowIntensity = 10
+//ATT.RTScopeBlackBox = true 
+//ATT.RTScopeBlackBoxShadow = true 
+
+//ATT.ScopeScreenRatio = 0.66
+
 ATT.RTScope = true
-ATT.RTScopeSubmatIndex = 4
+ATT.RTScopeSubmatIndex = 1
 ATT.RTScopeFOV = 12
-ATT.RTScopeReticle = Material("vgui/shared/reticles/T_ATACR_Dot.png", "mips smooth")
-ATT.RTScopeReticleScale = 1.04
-ATT.RTScopeColorable = true
-ATT.RTScopeShadowIntensity = 10
-ATT.RTScopeBlackBox = true 
-ATT.RTScopeBlackBoxShadow = true 
+ATT.RTScopeRes = 512
+ATT.RTScopeReticle = Material("vgui/shared/reticles/T_ATACR_Dot.png")
+ATT.RTScopeReticleScale = 1.05
+ATT.RTScopeShadowIntensity = 15
+ATT.RTCollimator = false -- Disables cheap scopes fov boost, disables sensivity adjustements
+ATT.RTScopeNoBlur = false -- By default, if arc9_fx_rtblur 1 then world behind gun wil be blurred. Enable if your "scope" is not so scope.
+ATT.RTScopeNoPP = false
+ATT.RTScopeNoShadow = false
+ATT.RTScopeBlackBox = true
+ATT.RTScopeBlackBoxShadow = true
+ATT.RTScopeColorable = false -- Scope takes color from player settings
+-- Lets you draw more things on to the reticle
+ATT.RTScopeDrawFunc = function(swep, rtsize) end
+-- Extra post processing like DrawMotionBlur() DrawSharpen() DrawBloom()
+ATT.RTScopeCustomPPFunc = function(swep) end
 
-ATT.ScopeScreenRatio = 0.66
+
+
+ARC9.LoadAttachment(ATT, "ron_scope_sdr")
+
+----------------------------------------// Optic ATACR
+
+ATT = {}
+
+ATT.PrintName = "ATAKR scope"
+ATT.CompactName = "ATAKR 1x-12x scope"
+ATT.Icon = Material("entities/attach/BP_Scope_ATACR_512.png", "mips smooth")
+ATT.Description = "ATAKR 1x-12x long-range scope"
+ATT.SortOrder = 2
+
+ATT.Model = "models/shared/attachments/optic_atacr.mdl"
+
+ATT.Category = "ron_scope"
+
+ATT.Sights = {
+    {
+        Pos = Vector(0, 8, -1.7),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1,
+        ViewModelFOV = 70,
+        RTScopeFOV = 1/0.1,
+    },
+    {
+        Pos = Vector(0, 8, -1.7),
+        Ang = Angle(0, 0, 0),
+        Magnification = 1.05,
+        ViewModelFOV = 65,
+        RTScopeFOV = 1/12,
+    },
+}
+
+ATT.DrawFunc = function(swep, model, wm) 
+    if !wm then
+        model:SetBodygroup(1, swep:GetMultiSight()-1)
+    end
+end
+
+//ATT.RTScope = true
+//ATT.RTScopeSubmatIndex = 4
+//ATT.RTScopeFOV = 12
+//ATT.RTScopeReticle = Material("vgui/shared/reticles/T_ATACR_Dot.png", "mips smooth")
+//ATT.RTScopeReticleScale = 1.04
+//ATT.RTScopeColorable = true
+//ATT.RTScopeShadowIntensity = 10
+//ATT.RTScopeBlackBox = true 
+//ATT.RTScopeBlackBoxShadow = true 
+
+//ATT.ScopeScreenRatio = 0.66
+
+ATT.RTScope = true
+ATT.RTScopeSubmatIndex = 2
+ATT.RTScopeFOV = 0
+ATT.RTScopeRes = 512
+ATT.RTScopeReticle = Material("vgui/shared/reticles/T_ATACR_Dot.png")
+ATT.RTScopeReticleScale = 1.05
+ATT.RTScopeShadowIntensity = 15
+ATT.RTCollimator = false -- Disables cheap scopes fov boost, disables sensivity adjustements
+ATT.RTScopeNoBlur = false -- By default, if arc9_fx_rtblur 1 then world behind gun wil be blurred. Enable if your "scope" is not so scope.
+ATT.RTScopeNoPP = false
+ATT.RTScopeNoShadow = false
+ATT.RTScopeBlackBox = true
+ATT.RTScopeBlackBoxShadow = true
+ATT.RTScopeColorable = false -- Scope takes color from player settings
+-- Lets you draw more things on to the reticle
+ATT.RTScopeDrawFunc = function(swep, rtsize) end
+-- Extra post processing like DrawMotionBlur() DrawSharpen() DrawBloom()
+ATT.RTScopeCustomPPFunc = function(swep) end
 
 
 
-ARC9.LoadAttachment(ATT, "ron_optic_sdr")
+ARC9.LoadAttachment(ATT, "ron_scope_atacr")
 
 ----------------------------------------// SFMB Brake
 
@@ -561,7 +652,8 @@ ATT.Icon = Material("entities/attach/sm_mod3_512.png", "mips smooth")
 ATT.Model = "models/shared/attachments/grip_combat.mdl"
 
 ATT.LHIK_Priority = 1
-ATT.LHIK = false
+ATT.LHIK = true
+ATT.IKAnimationAlsoPlayBase = true
 
 ATT.RecoilMult = 0.65
 ATT.VisualRecoilMult = 0.65

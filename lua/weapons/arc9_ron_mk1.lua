@@ -529,7 +529,7 @@ SWEP.Attachments = {
 	{
 		PrintName						= "Optic",
 		DefaultAttName					= "Default",
-		Category						= {"ron_holosight","ron_reflex"},
+		Category						= {"ron_holosight","ron_reflex","ron_scope"},
 		Bone							= "tag_sight",
 		Pos								= Vector(0, -3.5, -0.12),
 		Ang								= Angle(0, -90, 0),

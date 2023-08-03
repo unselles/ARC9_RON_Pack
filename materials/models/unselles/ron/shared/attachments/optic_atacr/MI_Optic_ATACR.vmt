@@ -1,0 +1,36 @@
+//if you don't know what a parameter does, visit:
+//https://developer.valvesoftware.com/wiki/$phong
+"VertexLitGeneric"
+{
+    "$basetexture" "models\unselles\ron\shared\attachments\optic_atacr\MI_Optic_ATACR_rgb"
+    "$bumpmap" "models\unselles\ron\shared\attachments\optic_atacr\MI_Optic_ATACR_n"
+    "$phongexponenttexture" "models\unselles\ron\shared\attachments\optic_atacr\MI_Optic_ATACR_e"
+
+    "$color2" "[0 0 0]"
+    "$blendtintbybasealpha" "1"
+
+    "$phong" "1"
+    "$phongboost" "1"
+    "$phongfresnelranges" "[1 0.5 0]"
+    "$phongalbedotint" "0"
+
+    "$rimlight" "1"
+    "$rimlightexponent" "100"
+    "$rimmask" "1"
+    "$rimlightboost" "0.2"
+
+    "$normalmapalphaenvmapmask" "1"
+    "$envmapfresnel" "1"
+    "$envmap" "env_cubemap"
+    "$envmaptint" "[0.02 0.02 0.02]"
+
+    "Proxies"
+    {
+        "MwEnvMapTint"
+        {
+            "specularity" "0.5"             //0.25, 0.5, 0.75, 1
+            "min" "0"
+            "max" "0.2"                      
+        }
+    }
+}
