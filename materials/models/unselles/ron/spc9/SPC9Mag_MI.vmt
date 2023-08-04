@@ -4,7 +4,7 @@
     "$bumpmap" "models\unselles\ron\spc9\SPC9Mag_MI_n"
     "$phongexponenttexture" "models\unselles\ron\spc9\SPC9Mag_MI_e"
 
-    "$color2" "[0.9 0.9 0.9]"
+    "$color2" "[0.8 0.8 0.8]"
     "$blendtintbybasealpha" "1"
 
     "$phong" "1"
@@ -28,7 +28,7 @@
         {
             "specularity" "0.5"             //0.25, 0.5, 0.75, 1
             "min" "0"
-            "max" "0.2"                       //change this if too bright in game
+            "max" "1"                       //change this if too bright in game
         }
     }
 }
