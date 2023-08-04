@@ -4,6 +4,7 @@ SWEP.Base					= "arc9_base"
 
 SWEP.Spawnable				= true
 SWEP.Category				= "ARC9 - Ready or Not"
+SWEP.SubCategory = "PDWs/SMGs"
 
 SWEP.PrintName				= "HK MP7A2"
 SWEP.TrueName				= "MP7A2"

@@ -4,6 +4,7 @@ SWEP.Base					= "arc9_base"
 
 SWEP.Spawnable				= true
 SWEP.Category				= "ARC9 - Ready or Not"
+SWEP.SubCategory = "Assault Rifles"
 
 SWEP.PrintName				= "MK18 MOD0"
 SWEP.TrueName				= "MK18"

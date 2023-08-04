@@ -4,6 +4,7 @@ SWEP.Base					= "arc9_base"
 
 SWEP.Spawnable				= true
 SWEP.Category				= "ARC9 - Ready or Not"
+SWEP.SubCategory = "Pistols"
 
 SWEP.PrintName				= "Colt Python"
 SWEP.TrueName				= ".357 Magnum"
