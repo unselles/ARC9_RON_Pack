@@ -335,6 +335,7 @@ SWEP.Animations = {
 		},
 	},
 	["fire_iron"] = {
+	Source				= "fire",
 	Time				= 0.5,
 	Source = "",
 	},
@@ -358,7 +359,7 @@ SWEP.Animations = {
 	["reload"] = {
 		Source				= "reload",
 		TPAnim				= ACT_HL2MP_GESTURE_RELOAD_AR2,
-		Time				= 2.4,
+		Time				= 2.7,
 		MinProgress				= 1.1,
 		LastClip1OutTime				= 0.9,
 		IKTimeLine = {
@@ -407,7 +408,7 @@ SWEP.Animations = {
 	["reload_empty"] = {
 		Source				= "reload_empty",
 		TPAnim				= ACT_HL2MP_GESTURE_RELOAD_AR2,
-		Time				= 1.7,
+		Time				= 1.85,
 		MinProgress				= 1.5,
 		LastClip1OutTime				= 0.7,
 		IKTimeLine = {
@@ -515,7 +516,6 @@ SWEP.Attachments = {
 		DefaultAttName					= "Default",
 		Category						= {"ron_socom338","ron_sfmb","ron_brake_default"},
 		Bone							= "tag_muzzle",
-        Installed 						= "ron_brake_default",
 		Pos								= Vector(0, 3.75, 0.07),
 		Ang								= Angle(0, 0, 0),
 		Icon_Offset						= Vector(0, -3, 0)

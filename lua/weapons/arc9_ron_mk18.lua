@@ -495,7 +495,7 @@ SWEP.Attachments = {
 	{
 		PrintName						= "Overbarrel Left",
 		DefaultAttName					= "Default",
-		Category						= {"ron_m600v","ron_pointer"},
+		Category						= {"ron_m600v","ron_pointer",},
 		Bone							= "light_3_socket",
 		Pos								= Vector(0, 0, 0.0),
 		Ang								= Angle(0, 0, 0),
@@ -513,7 +513,7 @@ SWEP.Attachments = {
 	{
 		PrintName						= "Muzzle",
 		DefaultAttName					= "Default",
-		Category						= {"ron_socom338","ron_sfmb","ron_brake_default"},
+		Category						= {"ron_socom338","ron_sfmb","ron_brake_default",},
 		Bone							= "sfmb_socket",
         Installed 						= "ron_brake_default",
 		Pos								= Vector(0, 3.75, 0),
@@ -523,7 +523,7 @@ SWEP.Attachments = {
 	{
 		PrintName						= "Optic",
 		DefaultAttName					= "Default",
-		Category						= {"ron_holosight","ron_reflex","ron_scope"},
+		Category						= {"ron_holosight","ron_reflex","ron_scope",},
 		Bone							= "tag_sight",
 		Pos								= Vector(0, 2, -0.74),
 		Ang								= Angle(0, -90, 0),
@@ -542,7 +542,7 @@ SWEP.Attachments = {
 	{
         PrintName 						= "Uderbarrel",
 		DefaultAttName					= "Default",
-        Category 						= "ron_grip",
+        Category 						= {"ron_grip","eft_foregrip_small",},
         Bone 							= "foregrip_socket",
 //        Installed 						= "",
         Pos 							= Vector(0, 0, -0.0),

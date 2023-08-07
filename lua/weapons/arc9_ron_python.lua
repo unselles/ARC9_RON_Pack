@@ -83,9 +83,6 @@ SWEP.RPM				= 75
 SWEP.Firemodes = {
 	{
 		Mode				= 1
-	},
-	{
-		Mode				= 1
 	}
 }
 

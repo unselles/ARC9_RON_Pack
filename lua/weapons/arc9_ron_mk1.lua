@@ -545,8 +545,19 @@ SWEP.Attachments = {
         Pos 							= Vector(0, -0.5, -0.15),
         Ang 							= Angle(0, -90, 0),
         Icon_Offset 					= Vector(0, 0, 0),
-    },
+	},
+	{
+			PrintName 						= "Uderbarrel",
+			DefaultAttName					= "Default",
+			Category 						= {"ron_grip","eft_foregrip_small",},
+			Bone 							= "foregrip_socket",
+		//        Installed 						= "",
+			Pos 							= Vector(0, 0, -0.0),
+			Ang 							= Angle(0, 180, 0),
+			Icon_Offset 					= Vector(0, 0, 0),
+	},
 }
+
 
 
 
