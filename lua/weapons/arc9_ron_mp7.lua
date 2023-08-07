@@ -332,6 +332,7 @@ SWEP.Animations = {
 	["holster"] = {
 		Source				= "holster",
 		Time				= 20 / 30,
+		MinProgress			= 0.3,
 		EventTable = {
 			{s	= ratel,							t = 0},
 			{s	= common .. "Universal_Long_Holster_02.ogg",			t = 0},
@@ -340,6 +341,7 @@ SWEP.Animations = {
 	["holster_empty"] = {
 		Source				= "holster_empty",
 		Time				= 20 / 30,
+		MinProgress			= 0.3,
 		EventTable = {
 			{s	= ratel,							t = 0},
 			{s	= common .. "cloth_6.ogg",			t = 0.2},
