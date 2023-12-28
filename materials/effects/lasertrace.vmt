@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "effects/arc9_eft/lasertrace"
+	"$basetexture" "effects/lasertrace"
 	"$additive" 1
 	"$translucent" 1
 	"$vertexcolor" 1

@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "effects/arc9_eft/laserdot2"
+	"$basetexture" "effects/laserdot2"
 	"$additive" 1
 	"$translucent" 1
 	"$vertexcolor" 1
