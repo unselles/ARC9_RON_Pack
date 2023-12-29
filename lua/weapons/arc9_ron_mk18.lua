@@ -19,7 +19,7 @@ SWEP.Trivia = {
 }
 if ARC9:UseTrueNames() then
 	SWEP.PrintName				= SWEP.TrueName
-    SWEP.Trivia.Manufacturer	= "	Colt Defense, Daniel Defense"
+	SWEP.Trivia.Manufacturer	= "	Colt Defense, Daniel Defense"
 end
 
 SWEP.Credits = {
@@ -79,8 +79,8 @@ SWEP.DropMagazineTime				= 1
 SWEP.RPM				= 700
 -- SWEP.Firemodes = { { Mode = -1 }, { Mode = 1 } } -- auto, semi
 SWEP.Firemodes = {
-    { Mode = -1, PoseParam = 2 },
-    { Mode = 1, PoseParam = 1 }
+	{ Mode = -1, PoseParam = 2 },
+	{ Mode = 1, PoseParam = 1 }
 }
 
 -------------------------- MELEE
@@ -125,7 +125,7 @@ SWEP.RecoilAutoControlMultHipFire	= 0.5
 
 -- VISUAL RECOIL
 
-SWEP.UseVisualRecoil = true 
+SWEP.UseVisualRecoil = true
 SWEP.VisualRecoil = 1
 SWEP.VisualRecoilMultHipFire = 0.15
 SWEP.VisualRecoilMultSights = 0.015
@@ -244,20 +244,21 @@ SWEP.DistantShootSoundSilenced	= common .. ""
 SWEP.DryFireSound				= common .. "weap_mp5_dryfire_03.ogg"
 
 SWEP.ShootSound = {
-    path .. "weap_m16_fire_01.ogg",
-    path .. "weap_m16_fire_02.ogg",
-    path .. "weap_m16_fire_03.ogg",
-    path .. "weap_m16_fire_04.ogg"
+	path .. "weap_m16_fire_01.ogg",
+	path .. "weap_m16_fire_02.ogg",
+	path .. "weap_m16_fire_03.ogg",
+	path .. "weap_m16_fire_04.ogg"
 }
 SWEP.ShootSoundSilenced = {
-    path .. "M4_Fire1_Suppressed.ogg",
-    path .. "M4_Fire2_Suppressed.ogg",
-    path .. "M4_Fire3_Suppressed.ogg",
-    path .. "M4_Fire4_Suppressed.ogg"
+	path .. "M4_Fire1_Suppressed.ogg",
+	path .. "M4_Fire2_Suppressed.ogg",
+	path .. "M4_Fire3_Suppressed.ogg",
+	path .. "M4_Fire4_Suppressed.ogg"
 }
 
 SWEP.DryFireSingleAction = false
 
+local ratel = {common .. "pistol_rattle_1.ogg", common .. "pistol_rattle_2.ogg", common .. "pistol_rattle_3.ogg"}
 SWEP.EnterSightsSound = ratel
 SWEP.ExitSightsSound = ratel
 
@@ -265,7 +266,6 @@ SWEP.ExitSightsSound = ratel
 SWEP.FiremodeSound				= "weapons/arc9_ron_shared/SwitchToSemi.ogg"
 
 local ci = CHAN_AUTO
-local ratel = {common .. "pistol_rattle_1.ogg", common .. "pistol_rattle_2.ogg", common .. "pistol_rattle_3.ogg"}
 local rottle = {common .. "cloth_2.ogg", common .. "cloth_3.ogg", common .. "cloth_4.ogg", common .. "cloth_6.ogg", common .. "rattle.ogg"}
 
 SWEP.ReloadInSights				= false -- This weapon can aim down sights while reloading.
@@ -330,7 +330,6 @@ SWEP.Animations = {
 		ShellEjectAt				= 0.03,
 		EventTable = {
 			{s	= {
-		
 				path .. "",
 				path .. ""
 			},										t = 0.03},
@@ -348,12 +347,12 @@ SWEP.Animations = {
 			{s	= path .. "mech_last.ogg",			t = 0.03},
 		},
 	},
-    ["firemode_1"] = {
-        Source = "firemodedown",
-    },
-    ["firemode_2"] = {
-        Source = "firemodeup",
-    },
+	["firemode_1"] = {
+		 Source = "firemodedown",
+	},
+	["firemode_2"] = {
+		Source = "firemodeup",
+	},
 
 	-- Reloads --
 
@@ -463,16 +462,16 @@ SWEP.Animations = {
 	},
 
 	-- Inspect --
-	
+
 	["inspect"] = {
-        Source = "inspect_enter",
+		Source = "inspect_enter",
 		Time				= 3,
 		EventTable = {
 			{s	= path .. "M4_MagCheck.ogg",			t = 0},
 			{s	= common .. "Cloth-ReloadStart.ogg",			t = 0},
 			{s	= common .. "Cloth-DryReloadEndGrab.ogg",			t = 0},
 		},
-	},
+},
 }
 
 
@@ -481,23 +480,25 @@ SWEP.Animations = {
 -------------------------- ATTACHMENTS
 
 SWEP.Hook_ModifyBodygroups = function(wep, data)
-    local eles = data.elements
-    local mdl = data.model
-    
-    if eles["ron_mk1_fs"] then
-        if wep:GetValue("FoldSights") then
-            mdl:SetBodygroup(3, 2)
-        else
-            mdl:SetBodygroup(3, 1)
-        end
-    end
+	local eles = data.elements
+	 local mdl = data.model
+
+	if eles["ron_mk1_fs"] then
+		if wep:GetValue("FoldSights") then
+			mdl:SetBodygroup(3, 2)
+		else
+			mdl:SetBodygroup(3, 1)
+		end
+	end
 end
 
 SWEP.Attachments = {
 	{
 		PrintName						= "Overbarrel Left",
 		DefaultAttName					= "Default",
-		Category						= {"ron_m600v","ron_pointer",},
+		Category						= {"ron_m600v","ron_pointer",
+			"eft_tactical",
+		},
 		Bone							= "light_3_socket",
 		Pos								= Vector(0, 0, 0.0),
 		Ang								= Angle(0, 0, 0),
@@ -506,7 +507,9 @@ SWEP.Attachments = {
 	{
 		PrintName						= "Overbarrel Up",
 		DefaultAttName					= "Default",
-		Category						= "ron_peq",
+		Category						= { "ron_peq",
+			"eft_tactical",
+		},
 		Bone							= "laser_socket",
 		Pos								= Vector(0, 0, 0.0),
 		Ang								= Angle(0, 0, 0),
@@ -515,9 +518,9 @@ SWEP.Attachments = {
 	{
 		PrintName						= "Muzzle",
 		DefaultAttName					= "Default",
-		Category						= {"ron_socom338","ron_sfmb","ron_brake_default",},
+		Category						= {"ron_socom338","ron_sfmb","ron_brake_default", "cod_muzzle"},
 		Bone							= "sfmb_socket",
-        Installed 						= "ron_brake_default",
+		Installed 						= "ron_brake_default",
 		Pos								= Vector(0, 3.75, 0),
 		Ang								= Angle(0, 0, 0),
 		Icon_Offset						= Vector(0, -3, 0)
@@ -525,35 +528,85 @@ SWEP.Attachments = {
 	{
 		PrintName						= "Optic",
 		DefaultAttName					= "Default",
-		Category						= {"ron_holosight","ron_reflex","ron_scope",},
+		Category						= {"ron_holosight","ron_reflex","ron_scope","cod_optic",
+			"eft_optic_small", "eft_optic_medium", "eft_optic_large"
+		},
 		Bone							= "tag_sight",
 		Pos								= Vector(0, 2, -0.74),
 		Ang								= Angle(0, -90, 0),
 		Icon_Offset						= Vector(0, 0, 0)
 	},
 	{
-        PrintName 						= "MK18 Back Sight",
+		PrintName 						= "MK18 Back Sight",
 		DefaultAttName					= "Default",
-        Category 						= "ron_mk18_sight",
-        Bone 							= "tag_sight",
-        Installed 						= "ron_mk18_sight",
-        Pos 							= Vector(0, 0, -0.74),
-        Ang 							= Angle(0, -90, 0),
-        Icon_Offset 					= Vector(0, 0, 0),
-    },
+		Category 						= "ron_mk18_sight",
+		Bone 							= "tag_sight",
+		Installed 						= "ron_mk18_sight",
+		Pos 							= Vector(0, 0, -0.74),
+		Ang 							= Angle(0, -90, 0),
+		Icon_Offset 					= Vector(0, 0, 0),
+	},
 	{
-        PrintName 						= "Uderbarrel",
+		PrintName 						= "Uderbarrel",
 		DefaultAttName					= "Default",
-        Category 						= {"ron_grip","eft_foregrip_small",},
-        Bone 							= "foregrip_socket",
-//        Installed 						= "",
-        Pos 							= Vector(0, 0, -0.0),
-        Ang 							= Angle(0, 180, 0),
-        Icon_Offset 					= Vector(0, 0, 0),
-    },
+		Category 						= {"ron_grip","eft_foregrip_small","cod_grips"},
+		Bone 							= "foregrip_socket",
+		Pos 							= Vector(0, 0, -0.0),
+		Ang 							= Angle(0, 180, 0),
+		Icon_Offset 					= Vector(0, 0, 0),
+	},
 }
 
-
-
-
-
+SWEP.AttachmentElements = {
+	["eft_tactical"] = {
+		AttPosMods = {
+			[1] = {
+				Pos = Vector(0, 0, 0.6),
+				Ang = Angle(0, 0, 180),
+			},
+		},
+	},
+	["cod_muzzle"] = {
+		AttPosMods = {
+			[3] = {
+				Pos = Vector(0, 0, 0),
+				Ang = Angle(0, -90, 0),
+			},
+		},
+	},
+	["cod_optic"] = {
+		AttPosMods = {
+			[4] = {
+				Pos = Vector(0, 2, -0.55),
+			},
+		},
+	},
+	["eft_optic_small"] = {
+		AttPosMods = {
+			[4] = {
+				Pos = Vector(0, 2, -0.55),
+			},
+		},
+	},
+	["eft_optic_medium"] = {
+		AttPosMods = {
+			[4] = {
+				Pos = Vector(0, 2, -0.55),
+			},
+		},
+	},
+	["eft_optic_large"] = {
+		AttPosMods = {
+			[4] = {
+				Pos = Vector(0, 2, -0.55),
+			},
+		},
+	},
+	["cod_grips"] = {
+		AttPosMods = {
+			[6] = {
+				Pos = Vector(0, 0, 0.25),
+			},
+		},
+	},
+}

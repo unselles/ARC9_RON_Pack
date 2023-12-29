@@ -31,7 +31,7 @@ ARC9.LoadAttachment(ATT, "ron_m600v")
 
 ----------------------------------------
 
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = "Laser Pointer"
 ATT.CompactName = "Laser Pointer"
@@ -61,7 +61,7 @@ ARC9.LoadAttachment(ATT, "ron_laser_cqbl")
 
 ----------------------------------------
 
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = "PEQ-15"
 ATT.CompactName = "PEQ-15 IR Laser"
@@ -91,7 +91,7 @@ ARC9.LoadAttachment(ATT, "ron_laser_peq15")
 
 ----------------------------------------
 
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = "SOCOM338"
 ATT.CompactName = "SOCOM Suppresssor"
@@ -118,7 +118,7 @@ ARC9.LoadAttachment(ATT, "ron_supp_socom338")
 
 ----------------------------------------
 
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = "HARVESTER"
 ATT.CompactName = "HARVESTER Suppresssor"
@@ -145,7 +145,7 @@ ARC9.LoadAttachment(ATT, "ron_supp_harvester")
 
 ----------------------------------------
 
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = "WM"
 ATT.CompactName = "WM Flashlight"
@@ -193,7 +193,7 @@ ATT.Category = {"ron_holosight"}
 
 
 
-//ATT.FoldSights = true
+--ATT.FoldSights = true
 
 ATT.Sights = {
     {
@@ -211,7 +211,7 @@ ATT.HoloSightSize = 465
 ATT.HoloSightColorable = false
 
 
-//ATT.ModelOffset = Vector(0, 0, 0)
+--ATT.ModelOffset = Vector(0, 0, 0)
 
 
 ARC9.LoadAttachment(ATT, "ron_optic_exps3")
@@ -235,7 +235,7 @@ ARC9.LoadAttachment(ATT, "ron_mk1_fs")
 
 ----------------------------------------
 
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = "TUNDRA"
 ATT.CompactName = "TUNDRA Suppressor"
@@ -260,9 +260,9 @@ ATT.Category = {"ron_tundra"}
 
 ARC9.LoadAttachment(ATT, "ron_supp_tundra")
 
-//---------------------------------------- Optic MicroT2
+---------------------------------------- Optic MicroT2
 
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = "MicroT2 Reflex"
 ATT.CompactName = "MicroT2"
@@ -277,7 +277,7 @@ ATT.Category = {"ron_reflex"}
 
 
 
-//ATT.FoldSights = true
+--ATT.FoldSights = true
 
 ATT.Sights = {
     {
@@ -299,10 +299,10 @@ ATT.HoloSightColorable = false
 
 ARC9.LoadAttachment(ATT, "ron_optic_microt2")
 
-//---------------------------------------- Optic SRS
+---------------------------------------- Optic SRS
 
 
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = "SRS"
 ATT.CompactName = "SRS Reflex"
@@ -340,9 +340,9 @@ ATT.HoloSightColorable = false
 
 ARC9.LoadAttachment(ATT, "ron_optic_srs")
 
-//---------------------------------------- Optic M5B
+---------------------------------------- Optic M5B
 
-local ATT = {}
+ATT = {}
 
 ATT.PrintName = "M5B"
 ATT.CompactName = "M5B Optic"
@@ -381,7 +381,7 @@ ATT.HoloSightColorable = false
 
 ARC9.LoadAttachment(ATT, "ron_optic_m5b")
 
-----------------------------------------// Optic SDR
+------------------------------------------ Optic SDR
 
 ATT = {}
 
@@ -401,14 +401,14 @@ ATT.Sights = {
         Ang = Angle(0, 0, 0),
         Magnification = 1,
         ViewModelFOV = 70,
-        RTScopeFOV = 4/1,
+        RTScopeFOV = 4 / 1,
     },
     {
         Pos = Vector(0, 8.0, -2),
         Ang = Angle(0, 0, 0),
         Magnification = 1,
         ViewModelFOV = 70,
-        RTScopeFOV = 1/1,
+        RTScopeFOV = 1 / 1,
     },
     {
         Pos = Vector(0, 8, -3.5),
@@ -418,23 +418,23 @@ ATT.Sights = {
     },
 }
 
-ATT.DrawFunc = function(swep, model, wm) 
+ATT.DrawFunc = function(swep, model, wm)
     if !wm then
-        model:SetBodygroup(1, swep:GetMultiSight()-1)
+        model:SetBodygroup(1, swep:GetMultiSight() - 1)
     end
 end
 
-//ATT.RTScope = true
-//ATT.RTScopeSubmatIndex = 4
-//ATT.RTScopeFOV = 12
-//ATT.RTScopeReticle = Material("vgui/shared/reticles/T_ATACR_Dot.png", "mips smooth")
-//ATT.RTScopeReticleScale = 1.04
-//ATT.RTScopeColorable = true
-//ATT.RTScopeShadowIntensity = 10
-//ATT.RTScopeBlackBox = true 
-//ATT.RTScopeBlackBoxShadow = true 
+--ATT.RTScope = true
+--ATT.RTScopeSubmatIndex = 4
+--ATT.RTScopeFOV = 12
+--ATT.RTScopeReticle = Material("vgui/shared/reticles/T_ATACR_Dot.png", "mips smooth")
+--ATT.RTScopeReticleScale = 1.04
+--ATT.RTScopeColorable = true
+--ATT.RTScopeShadowIntensity = 10
+--ATT.RTScopeBlackBox = true 
+--ATT.RTScopeBlackBoxShadow = true 
 
-//ATT.ScopeScreenRatio = 0.66
+--ATT.ScopeScreenRatio = 0.66
 
 ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 1
@@ -459,7 +459,7 @@ ATT.RTScopeCustomPPFunc = function(swep) end
 
 ARC9.LoadAttachment(ATT, "ron_scope_sdr")
 
-----------------------------------------// Optic ATACR
+------------------------------------------ Optic ATACR
 
 ATT = {}
 
@@ -479,34 +479,34 @@ ATT.Sights = {
         Ang = Angle(0, 0, 0),
         Magnification = 1,
         ViewModelFOV = 70,
-        RTScopeFOV = 1/0.1,
+        RTScopeFOV = 1 / 0.1,
     },
     {
         Pos = Vector(0, 8, -1.7),
         Ang = Angle(0, 0, 0),
         Magnification = 1.05,
         ViewModelFOV = 65,
-        RTScopeFOV = 1/12,
+        RTScopeFOV = 1 / 12,
     },
 }
 
-ATT.DrawFunc = function(swep, model, wm) 
+ATT.DrawFunc = function(swep, model, wm)
     if !wm then
-        model:SetBodygroup(1, swep:GetMultiSight()-1)
+        model:SetBodygroup(1, swep:GetMultiSight() - 1)
     end
 end
 
-//ATT.RTScope = true
-//ATT.RTScopeSubmatIndex = 4
-//ATT.RTScopeFOV = 12
-//ATT.RTScopeReticle = Material("vgui/shared/reticles/T_ATACR_Dot.png", "mips smooth")
-//ATT.RTScopeReticleScale = 1.04
-//ATT.RTScopeColorable = true
-//ATT.RTScopeShadowIntensity = 10
-//ATT.RTScopeBlackBox = true 
-//ATT.RTScopeBlackBoxShadow = true 
+--ATT.RTScope = true
+--ATT.RTScopeSubmatIndex = 4
+--ATT.RTScopeFOV = 12
+--ATT.RTScopeReticle = Material("vgui/shared/reticles/T_ATACR_Dot.png", "mips smooth")
+--ATT.RTScopeReticleScale = 1.04
+--ATT.RTScopeColorable = true
+--ATT.RTScopeShadowIntensity = 10
+--ATT.RTScopeBlackBox = true 
+--ATT.RTScopeBlackBoxShadow = true 
 
-//ATT.ScopeScreenRatio = 0.66
+--ATT.ScopeScreenRatio = 0.66
 
 ATT.RTScope = true
 ATT.RTScopeSubmatIndex = 2
@@ -531,7 +531,7 @@ ATT.RTScopeCustomPPFunc = function(swep) end
 
 ARC9.LoadAttachment(ATT, "ron_scope_atacr")
 
-----------------------------------------// SFMB Brake
+------------------------------------------ SFMB Brake
 
 ATT = {}
 
@@ -583,7 +583,7 @@ ATT.Category = {"ron_brake_default"}
 
 ARC9.LoadAttachment(ATT, "ron_brake_default")
 
-//---------------------------------------- DF Fold Sights Up
+------------------------------------------ DF Fold Sights Up
 
 ATT = {}
 
@@ -602,7 +602,7 @@ ATT.Category = {"ron_default_fs_up"}
 
 ARC9.LoadAttachment(ATT, "ron_default_fs_up")
 
-//---------------------------------------- DF Fold Sights Down
+------------------------------------------ DF Fold Sights Down
 
 ATT = {}
 
@@ -621,7 +621,7 @@ ATT.Category = {"ron_default_fs_down"}
 
 ARC9.LoadAttachment(ATT, "ron_default_fs_down")
 
-//---------------------------------------- MK18 Back Sight
+------------------------------------------ MK18 Back Sight
 
 ATT = {}
 
@@ -640,7 +640,7 @@ ATT.Category = {"ron_mk18_sight"}
 
 ARC9.LoadAttachment(ATT, "ron_mk18_sight")
 
-//---------------------------------------- Grip Combat
+------------------------------------------ Grip Combat
 
 ATT = {}
 
@@ -653,7 +653,7 @@ ATT.Model = "models/shared/attachments/grip_combat.mdl"
 
 ATT.LHIK_Priority = 1
 ATT.LHIK = true
-ATT.IKAnimationAlsoPlayBase = true
+ATT.IKAnimationAlsoPlayBase = false
 
 ATT.RecoilMult = 0.65
 ATT.VisualRecoilMult = 0.65
@@ -664,7 +664,7 @@ ATT.Category = "ron_grip"
 
 ARC9.LoadAttachment(ATT, "ron_grip_combat")
 
-//---------------------------------------- Grip Angled
+------------------------------------------ Grip Angled
 
 ATT = {}
 
