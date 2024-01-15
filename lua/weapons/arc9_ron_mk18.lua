@@ -93,55 +93,81 @@ SWEP.BashLungeRange				= 128
 SWEP.BashRange					= 64
 SWEP.PreBashTime				= 0.25
 SWEP.PostBashTime				= 0.5
+--          Recoil
+-- touch these
 
--------------------------- RECOIL
+SWEP.Recoil = 1.1 -- general multiplier of main recoil
 
--- General recoil multiplier
-SWEP.Recoil				= 4
+SWEP.RecoilUp   = 3   -- up recoil
+SWEP.RecoilSide = 0.2 -- sideways recoil
+SWEP.RecoilRandomUp   = 0.75 -- random up/down
+SWEP.RecoilRandomSide = 0.1   -- random left/right
 
--- Static increasing recoil
-SWEP.RecoilUp				= 0.4
-SWEP.RecoilSide				= 0.1
-SWEP.RecoilUpAddSighted = -0.35 -- Multiplier for vertical recoil
+SWEP.RecoilAutoControl = 5 -- autocompenstaion, could be cool if set to high but it also affects main recoil
 
--- Unpredictable circle recoil
-SWEP.RecoilRandomUp			= 0.2
-SWEP.RecoilRandomSide		= 0.3
+-- visual recoil   aka visrec
+SWEP.VisualRecoil = 1 -- general multiplier for it
 
-SWEP.RecoilDissipationRate	= 15 -- How much recoil dissipates per second.
-SWEP.RecoilResetTime		= 0.2 -- How long the gun must go before the recoil pattern starts to reset.
-SWEP.RecoilFullResetTime = 0.10
+local EFT_VisualRecoilUp_BURST_SEMI   = 0.15   -- up/down tilt when semi/bursts
+SWEP.VisualRecoilUp                   = 0.3   --   when fullautoing
+local EFT_VisualRecoilSide_BURST_SEMI = 0.001 -- left/right tilt when semi/burst
+SWEP.VisualRecoilSide                 = 0.1   --   when fullautoing
+SWEP.VisualRecoilRoll = 3 -- roll tilt, a visual thing
 
-SWEP.RecoilAutoControl		= 5
-SWEP.RecoilAutoControlMultHipFire = 0.2
-SWEP.RecoilAutoControlMultSights = 0.2
-SWEP.RecoilAutoControlMultCrouch = 3
+SWEP.VisualRecoilPunch = 1.5 -- How far back visrec moves the gun
+SWEP.VisualRecoilPunchSights = 5 -- same but in sights only
 
-SWEP.RecoilKick				= 1
-SWEP.RecoilPatternDrift		= 5000
+SWEP.VisualRecoilDampingConst = 200  -- spring settings, this is speed of visrec
+SWEP.VisualRecoilSpringPunchDamping = 10 -- the less this is the more wobbly gun moves
+SWEP.VisualRecoilSpringMagnitude = 0.5 -- some third element of spring, high values make gun shake asf on low fps
 
-SWEP.RecoilMultHipFire				= 1.25
-SWEP.RecoilAutoControlMultHipFire	= 0.5
+SWEP.VisualRecoilPositionBumpUpHipFire = 0.1 -- gun will go down each shot by this value
+SWEP.VisualRecoilPositionBumpUp = -0.5 -- same but in sights
+SWEP.VisualRecoilPositionBumpUpRTScope = 0.05 -- same but in rt scopes, you probably should keep it same as sight value, i guess it doesn't matter anymore after recoil update
 
--- VISUAL RECOIL
+SWEP.VisualRecoilCenter = Vector(6, 25, 2) -- ugh, i dont now what to set it too, but probably it should be diffferent on each gun
+local EFT_ShotsToSwitchToFullAutoBehaviur = 2 -- how many shots for switch to fullauto stats from semi/burst, + 2 shots afterwards are lerping. you probably should not touch this but ok
 
-SWEP.UseVisualRecoil = true
-SWEP.VisualRecoil = 1
-SWEP.VisualRecoilMultHipFire = 0.15
-SWEP.VisualRecoilMultSights = 0.015
-SWEP.VisualRecoilMultCrouch = 0.10
+SWEP.RecoilKick = 0.3 -- camera roll each shot + makes camera go more up when fullautoing
 
-SWEP.VisualRecoilCenter = Vector(0, 0, 0)
-SWEP.VisualRecoilUp = 3
-SWEP.VisualRecoilSide = 0.2 -- Horizontal tilt
-SWEP.VisualRecoilSideAddSighted = 0.05
-SWEP.VisualRecoilRoll = 50 -- Roll tilt
+-- dont touch this i guess
 
-SWEP.VisualRecoilPositionBump = 1
-SWEP.VisualRecoilPositionBumpUp = -0.75
+SWEP.RecoilMultHipFire = 1
+SWEP.RecoilMultCrouch = 0.75
+SWEP.RecoilUpMultFirstShot = 0.85
+SWEP.RecoilUpMultRecoil = 1.2
 
-SWEP.VisualRecoilPunch = 7 -- How far back visual recoil moves the gun
-SWEP.VisualRecoilPunchSights = 0 -- How far back visual recoil moves the gun
+SWEP.RecoilDissipationRate = 5
+SWEP.RecoilAutoControlMultHipFire = 0.75
+SWEP.RecoilAutoControl_DontTryToReturnBack = true
+SWEP.RecoilResetTime = 0.03
+SWEP.RecoilFullResetTime = 0.2
+
+SWEP.UseVisualRecoil = true 
+SWEP.VisualRecoilMultHipFire = 1
+SWEP.VisualRecoilMultSights = 1
+SWEP.VisualRecoilMultCrouch = 0.75
+
+SWEP.VisualRecoilDampingConstMultFirstShot = 3
+
+-- SWEP.VisualRecoilThinkFunc = function(springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING, recamount)
+--     return springconstant, VisualRecoilSpringMagnitude, PUNCH_DAMPING
+-- end
+
+SWEP.VisualRecoilDoingFunc = function(up, side, roll, punch, recamount, self)
+    local fullauto = math.Clamp(recamount - EFT_ShotsToSwitchToFullAutoBehaviur, 0, 3) * 0.33333333
+    up = Lerp(fullauto, EFT_VisualRecoilUp_BURST_SEMI, up)
+    side = Lerp(fullauto, EFT_VisualRecoilSide_BURST_SEMI, side)
+
+    -- if recamount < 2 then
+    --     if self:GetSightAmount() < 0.2 then up = 1 end -- only for visual when hipfiring
+    -- end
+
+    return up, side, roll, punch
+end
+
+SWEP.RecoilKickAffectPitch = false 
+SWEP.RecoilKickDamping = 10
 
 -------------------------- SPREAD
 
